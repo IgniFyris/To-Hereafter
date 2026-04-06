@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://u4lkmvga7xor"]
+
+[ext_resource type="Texture2D" uid="uid://cfv2iagiduq3w" path="res://Assets/Buffer Area/image.jpg" id="1_j5fyi"]
+
+[node name="Angel" type="Sprite2D" unique_id=892918844]
+position = Vector2(1.9073486e-06, 1)
+scale = Vector2(0.5100865, 0.39622617)
+texture = ExtResource("1_j5fyi")

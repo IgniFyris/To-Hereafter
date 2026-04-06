@@ -1,25 +1,48 @@
 extends CharacterBody2D
 
+@onready var CoyoteTimer = $CoyoteTimer
+@onready var JumpBufferTimer = $JumpBufferTimer
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
+@onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
+@onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
+@export var speed = 10.0
+@export var jump_height : float = 40.0
+@export var jump_time_to_peak : float = 0.25
+@export var jump_time_to_descent : float = 0.19
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+@export var death_scene: StringName = &""
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+var speed_multipilier = 30
+var direction = 0
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+var dead = false
 
-	move_and_slide()
+func _physics_process(delta):
+	if not dead:
+		velocity.y += gravityget() * delta
+
+		# Handle jump.
+		if Input.is_action_just_pressed("jump"):
+			JumpBufferTimer.start()
+			
+		if	(is_on_floor() or not CoyoteTimer.is_stopped()) and not JumpBufferTimer.is_stopped():
+			velocity.y = jump_velocity
+
+		# Get the input direction and handle the movement/deceleration.
+		direction = Input.get_axis("move_left", "move_right")
+		if direction:
+			velocity.x = direction * speed * speed_multipilier
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed * speed_multipilier)
+			
+		var was_on_floor = is_on_floor()
+
+		move_and_slide()
+		
+		if was_on_floor and not is_on_floor():
+			CoyoteTimer.start()
+	
+func gravityget() -> float:
+	return jump_gravity if velocity.y < 0.0 else fall_gravity

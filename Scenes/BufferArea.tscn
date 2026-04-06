@@ -2,27 +2,47 @@
 
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="1_dx6ns"]
 [ext_resource type="Texture2D" uid="uid://cfv2iagiduq3w" path="res://Assets/Buffer Area/image.jpg" id="2_7ht0s"]
+[ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Angel.tscn" id="3_1sao5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1sao5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dx6ns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ht0s"]
 size = Vector2(3505, 102)
 
 [node name="Buffer Area" type="Node2D" unique_id=909989474]
 
-[node name="Player" parent="." unique_id=572479440 instance=ExtResource("1_dx6ns")]
-position = Vector2(645, 579)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2097931932]
+offset_right = 1286.0
+offset_bottom = 716.0
+texture = ExtResource("2_7ht0s")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1240100353]
-position = Vector2(168, 613)
+[node name="Player" parent="." unique_id=572479440 instance=ExtResource("1_dx6ns")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(462, 663)
+metadata/_edit_group_ = true
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=1211618507]
+position = Vector2(2, 3.0517578e-05)
+zoom = Vector2(0.935, 0.935)
+position_smoothing_enabled = true
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1240100353]
+position = Vector2(655, 769)
 physics_material_override = SubResource("PhysicsMaterial_1sao5")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1484631529]
-position = Vector2(471.74994, 81.25)
-scale = Vector2(10.151297, 0.38679245)
-texture = ExtResource("2_7ht0s")
+[node name="Sprite2D" type="Sprite2D" parent="Platform" unique_id=1484631529]
+position = Vector2(1.1920929e-07, 148.44458)
+scale = Vector2(3498.0002, 399.11075)
+texture = SubResource("PlaceholderTexture2D_dx6ns")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=509893825]
-position = Vector2(471.5, 81)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=509893825]
 shape = SubResource("RectangleShape2D_7ht0s")
+
+[node name="Angel" parent="." unique_id=892918844 instance=ExtResource("3_1sao5")]
+y_sort_enabled = true
+position = Vector2(162, 594)
+scale = Vector2(-0.44956776, 0.9358491)
