@@ -1,7 +1,28 @@
 [gd_scene format=3 uid="uid://f1pyot7nea26"]
 
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="1_dx6ns"]
+[ext_resource type="Texture2D" uid="uid://cfv2iagiduq3w" path="res://Assets/Buffer Area/image.jpg" id="2_7ht0s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1sao5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ht0s"]
+size = Vector2(3505, 102)
 
 [node name="Buffer Area" type="Node2D" unique_id=909989474]
 
 [node name="Player" parent="." unique_id=572479440 instance=ExtResource("1_dx6ns")]
+position = Vector2(645, 579)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1240100353]
+position = Vector2(168, 613)
+physics_material_override = SubResource("PhysicsMaterial_1sao5")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1484631529]
+position = Vector2(471.74994, 81.25)
+scale = Vector2(10.151297, 0.38679245)
+texture = ExtResource("2_7ht0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=509893825]
+position = Vector2(471.5, 81)
+shape = SubResource("RectangleShape2D_7ht0s")
