@@ -6,13 +6,12 @@ var loading_screen : PackedScene = preload("uid://chgdopktb0d2w")
 var loaded_resource : PackedScene
 var scene_path : String               
 var previous_scene_path : String       
-var progress : Array = []
 var use_sub_threads : bool = true
 
 func _ready() -> void:
 	set_process(false)
 	
-func load_scene(_scene_path: String) -> void:
+func load_scene(_scene_path: String, slduration: float) -> void:
 	previous_scene_path = scene_path
 	scene_path = _scene_path
 	
@@ -21,6 +20,7 @@ func load_scene(_scene_path: String) -> void:
 	load_finished.connect(new_load_screen._on_load_finished)
 	
 	await new_load_screen.loading_screen_ready
+	new_load_screen.duration = slduration
 	
 	start_load()
 	
