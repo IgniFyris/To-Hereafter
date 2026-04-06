@@ -11,6 +11,8 @@ func _ready() -> void:
 
 func _on_begin_pressed() -> void:
 	SceneLoader.load_scene("uid://bbxwnl4ctuot6", 1.5)
+	var tween = create_tween().tween_property(MainMenuMusic, "volume_db", -90.0, 3)
+	await tween.finished
 
 func _on_options_pressed() -> void:
 	var options = options_scene.instantiate()

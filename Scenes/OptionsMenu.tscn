@@ -39,6 +39,25 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.06654745, 0.079980336, 0.15821299, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1681188626]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -892.00006
+offset_top = -555.0
+offset_right = 902.0
+offset_bottom = 523.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.06654745, 0.079980336, 0.15821299, 1)
+
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=289374257]
 process_mode = 3
 layout_mode = 1
