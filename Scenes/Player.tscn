@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cqvwtvcccj3lg"]
+
+[ext_resource type="Texture2D" uid="uid://bcya7nhdhi0ar" path="res://Assets/Player/588220026_857426343444374_6121070237596788635_n.jpg" id="1_rpqav"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyqiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rpqav")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rpqav")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rpqav")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rpqav")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rpqav")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbkls"]
+radius = 22.0
+height = 68.0
+
+[node name="Player" type="CharacterBody2D" unique_id=572479440]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1954718225]
+position = Vector2(-4.172325e-07, -5.364418e-07)
+scale = Vector2(0.07074831, 0.12811388)
+sprite_frames = SubResource("SpriteFrames_kyqiw")
+animation = &"hit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801466016]
+shape = SubResource("CapsuleShape2D_qbkls")
