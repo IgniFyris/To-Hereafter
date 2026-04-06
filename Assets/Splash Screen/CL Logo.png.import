@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7eydkl3rtlmv"
-path="res://.godot/imported/CL Splash Screen Image.png-2d0d067a1eb3681d83304053a54919a0.ctex"
+uid="uid://pdv4m2g1hles"
+path="res://.godot/imported/CL Logo.png-f605fefa9335c09df2e5985327affd94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CL Splash Screen Image.png"
-dest_files=["res://.godot/imported/CL Splash Screen Image.png-2d0d067a1eb3681d83304053a54919a0.ctex"]
+source_file="res://Assets/Splash Screen/CL Logo.png"
+dest_files=["res://.godot/imported/CL Logo.png-f605fefa9335c09df2e5985327affd94.ctex"]
 
 [params]
 

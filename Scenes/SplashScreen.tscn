@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b6u51oj4l0ahl"]
 
-[ext_resource type="Texture2D" uid="uid://b7eydkl3rtlmv" path="res://CL Splash Screen Image.png" id="1_acvwv"]
+[ext_resource type="Texture2D" uid="uid://b7eydkl3rtlmv" path="res://Assets/Splash Screen/CL Splash Screen Image.png" id="1_acvwv"]
 [ext_resource type="Script" uid="uid://cqs3gk4ae6iyd" path="res://Scripts/splash_screen.gd" id="1_pufkq"]
-[ext_resource type="Texture2D" uid="uid://pdv4m2g1hles" path="res://CL Logo.png" id="2_lus2m"]
+[ext_resource type="Texture2D" uid="uid://pdv4m2g1hles" path="res://Assets/Splash Screen/CL Logo.png" id="2_lus2m"]
 
 [node name="Splash Screen" type="Node2D" unique_id=564730703]
 script = ExtResource("1_pufkq")
