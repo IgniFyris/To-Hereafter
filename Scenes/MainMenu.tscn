@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cvp7sk28csjfr"]
+
+[ext_resource type="Script" uid="uid://dxbohorh1gj0e" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
+
+[node name="MainMenu" type="Node2D" unique_id=1271639923]
+script = ExtResource("1_tt5f1")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=685736879]
+offset_left = 609.0
+offset_top = 320.0
+offset_right = 742.0
+offset_bottom = 398.0
+text = "bomboclat"

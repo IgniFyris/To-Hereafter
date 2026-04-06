@@ -11,8 +11,23 @@ config_version=5
 [application]
 
 config/name="To Hereafter"
+run/main_scene="uid://b6u51oj4l0ahl"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/stretch_mode=0
+boot_splash/use_filter=false
+boot_splash/image="uid://pdv4m2g1hles"
+boot_splash/minimum_display_time=2000
+
+[autoload]
+
+SceneLoader="*uid://qqe1qdyr4bd7"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [physics]
 
