@@ -15,11 +15,9 @@ offset_bottom = 744.0
 color = Color(0, 0, 0, 1)
 
 [node name="CL_Text" type="Sprite2D" parent="." unique_id=585691683]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(170.66678, 96.0001)
-scale = Vector2(0.36874995, 0.36874992)
+position = Vector2(17, 19.000002)
+scale = Vector2(1.0833333, 1.0833333)
 texture = ExtResource("1_acvwv")
-centered = false
 
 [node name="CL_Logo" type="Sprite2D" parent="." unique_id=500007138]
 position = Vector2(646, 370)

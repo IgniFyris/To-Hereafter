@@ -19,15 +19,20 @@ boot_splash/use_filter=false
 boot_splash/image="uid://pdv4m2g1hles"
 boot_splash/minimum_display_time=2000
 
+[audio]
+
+buses/default_bus_layout="uid://bej6pyao0oo1e"
+
 [autoload]
 
 SceneLoader="*uid://qqe1qdyr4bd7"
+MainMenuMusic="*uid://cur8tm1xt2km1"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=4
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [physics]

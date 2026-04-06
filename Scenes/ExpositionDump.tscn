@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bbxwnl4ctuot6"]
+
+[ext_resource type="Script" uid="uid://dfc2qm24lkhov" path="res://Scripts/exposition_dump.gd" id="1_8lucr"]
+
+[node name="ExpositionDump" type="Node2D" unique_id=1052169880]
+script = ExtResource("1_8lucr")
+
+[node name="FadeScreen" type="ColorRect" parent="." unique_id=128468312]
+offset_left = -22.0
+offset_top = -21.0
+offset_right = 1301.0
+offset_bottom = 744.0
+color = Color(0, 0, 0, 1)
