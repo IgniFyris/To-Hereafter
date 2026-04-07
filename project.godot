@@ -27,6 +27,7 @@ buses/default_bus_layout="uid://bej6pyao0oo1e"
 
 SceneLoader="*uid://qqe1qdyr4bd7"
 MainMenuMusic="*uid://cur8tm1xt2km1"
+DialogueManager="*uid://c3rodes2l3gxb"
 
 [display]
 
@@ -34,6 +35,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/mode=3
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
