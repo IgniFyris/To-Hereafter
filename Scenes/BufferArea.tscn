@@ -25,9 +25,10 @@ position = Vector2(462, 663)
 metadata/_edit_group_ = true
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=1211618507]
-position = Vector2(2, 3.0517578e-05)
-zoom = Vector2(1.605, 1.605)
+position = Vector2(2, 0)
+zoom = Vector2(0.935, 0.935)
 position_smoothing_enabled = true
+position_smoothing_speed = 9.0
 
 [node name="Platform" type="StaticBody2D" parent="." unique_id=1240100353]
 position = Vector2(655, 769)

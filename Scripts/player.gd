@@ -7,12 +7,16 @@ extends CharacterBody2D
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
-@export var speed = 10.0
+@export var speed = 20.0
 @export var jump_height : float = 40.0
 @export var jump_time_to_peak : float = 0.25
 @export var jump_time_to_descent : float = 0.19
 
 @export var death_scene: StringName = &""
+
+var dash_speed = 50.0
+var dashing = false
+var can_dash = true
 
 var speed_multipilier = 30
 var direction = 0
@@ -27,13 +31,22 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump"):
 			JumpBufferTimer.start()
 			
+		if Input.is_action_just_pressed("dash") and can_dash:
+			dashing = true
+			can_dash = false
+			$DashTimer.start()
+			$DashCooldown.start()
+			
 		if	(is_on_floor() or not CoyoteTimer.is_stopped()) and not JumpBufferTimer.is_stopped():
 			velocity.y = jump_velocity
 
 		# Get the input direction and handle the movement/deceleration.
 		direction = Input.get_axis("move_left", "move_right")
 		if direction:
-			velocity.x = direction * speed * speed_multipilier
+			if dashing:
+				velocity.x = direction * dash_speed * speed_multipilier
+			else:
+				velocity.x = direction * speed * speed_multipilier
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed * speed_multipilier)
 			
@@ -46,3 +59,11 @@ func _physics_process(delta):
 	
 func gravityget() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
+
+
+func _on_dash_timer_timeout() -> void:
+	dashing = false
+
+
+func _on_dash_cooldown_timeout() -> void:
+	can_dash = true
