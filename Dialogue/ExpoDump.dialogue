@@ -1,7 +1,16 @@
 ~ start
 [color=#A4BAB7]???[/color]: [speed=0.7]The number of deaths have increased in this world,[wait=0.5] and show no signs of decreasing any time soon..
-[color=#A4BAB7]???[/color]: [speed=0.7]I have done my best over the centuries trying to soothe, guide, and assist each and every one of them into what lies after. 
-[color=#A4BAB7]???[/color]: [speed=0.7]But as time progresses, I find that keeping track of the great number of souls has become[speed=0.2].. [wait=0.6]A [i]cumbersome[/i] task. 
-[color=#A4BAB7]???[/color]: [speed=0.7]Which is why I'm eternally grateful for beings like [b]you[/b].
-[color=#A4BAB7]???[/color]: [speed=0.7][color=#3A7CA5]Psychopomps[/color] help avoid the potential neglect of those who have recently departed.
+=> END
+
+~ expodump2
+[color=#A4BAB7]???[/color]: [speed=0.7]I have done my best over the centuries trying to [wave]soothe[/wave], [wave]guide[/wave], and [wave]assist[/wave] each and every one of them into what lies after. 
+=> END
+
+~ expodump3
+[color=#A4BAB7]???[/color]: [speed=0.7]But as time progresses, I find that keeping track of the great number of souls has become[speed=0.2].. [wait=0.6]A [i][shake]cumbersome[/shake][/i] task. 
+=> END
+
+~ expodump4
+[color=#A4BAB7]???[/color]: [speed=0.7]Which is why I'm eternally grateful for beings like [speed=0.1][b]you[/b].
+[color=#A4BAB7]???[/color]: [speed=0.7][wave][color=#96CDFF]Psychopomps[/color][/wave] help avoid the potential neglect of those who have recently departed.
 => END
