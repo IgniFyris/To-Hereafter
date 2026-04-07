@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d1hcqjdkdqx5t"
+path="res://.godot/imported/ExpoDump.dialogue-9a88c0fedb055bb3e72d0157f0a2778e.tres"
+
+[deps]
+
+source_file="res://Dialogue/ExpoDump.dialogue"
+dest_files=["res://.godot/imported/ExpoDump.dialogue-9a88c0fedb055bb3e72d0157f0a2778e.tres"]
+
+[params]
+
+defaults=true
