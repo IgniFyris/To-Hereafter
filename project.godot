@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="To Hereafter"
-run/main_scene="uid://f1pyot7nea26"
+run/main_scene="uid://b6u51oj4l0ahl"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/stretch_mode=0
