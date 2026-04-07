@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="1_dx6ns"]
 [ext_resource type="Texture2D" uid="uid://cfv2iagiduq3w" path="res://Assets/Buffer Area/image.jpg" id="2_7ht0s"]
 [ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Angel.tscn" id="3_1sao5"]
-[ext_resource type="Script" uid="uid://cs2cv4mu5ksps" path="res://Scripts/camera.gd" id="3_dinao"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1sao5"]
 
@@ -25,12 +24,11 @@ y_sort_enabled = true
 position = Vector2(462, 663)
 metadata/_edit_group_ = true
 
-[node name="Camera" type="Camera2D" parent="." unique_id=1211618507]
-position = Vector2(464, 663)
+[node name="Camera" type="Camera2D" parent="Player" unique_id=1211618507]
+position = Vector2(2, 0)
 zoom = Vector2(0.935, 0.935)
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-script = ExtResource("3_dinao")
+position_smoothing_speed = 9.0
 
 [node name="Platform" type="StaticBody2D" parent="." unique_id=1240100353]
 position = Vector2(655, 769)

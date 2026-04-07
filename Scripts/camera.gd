@@ -1,8 +1,8 @@
 extends Camera2D
 
 var desired_offset: Vector2
-var min_offset = -200
-var max_offset = 200
+var min_offset = -100
+var max_offset = 100
 
 func _process(delta: float) -> void:
 	desired_offset = (get_global_mouse_position() - position) * 0.5
