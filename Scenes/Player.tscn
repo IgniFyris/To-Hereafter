@@ -71,6 +71,14 @@ shape = SubResource("CapsuleShape2D_qbkls")
 wait_time = 0.14
 one_shot = true
 
+[node name="DashTimer" type="Timer" parent="." unique_id=1187270348]
+wait_time = 0.2
+
 [node name="JumpBufferTimer" type="Timer" parent="." unique_id=2049601842]
 wait_time = 0.1
 one_shot = true
+
+[node name="DashCooldown" type="Timer" parent="." unique_id=1290617312]
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
