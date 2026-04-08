@@ -55,6 +55,7 @@ func _draw():
 			var start_rads = (TAU * (i-1)) / (len(options)- 1)
 			var end_rads = (TAU * i) / (len(options) - 1)
 			var mid_rads = (start_rads + end_rads)/2 * -1
+			@warning_ignore("integer_division")
 			var radius_mid = (inner_radius + outer_radius) / 2
 
 			if selection == i:

@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Buffer Area/UpgradeAngel.tscn" id="3_1sao5"]
 [ext_resource type="PackedScene" uid="uid://dshah3f0rfdhk" path="res://Scenes/main.tscn" id="4_dinao"]
 [ext_resource type="PackedScene" uid="uid://byk0nbaiqbc55" path="res://Scenes/selection_wheel.tscn" id="5_2mgux"]
+[ext_resource type="PackedScene" uid="uid://dst1hv3o188kr" path="res://Scenes/Buffer Area/ProgressAngel.tscn" id="6_8ekdt"]
+[ext_resource type="PackedScene" uid="uid://s2bxygfo6at6" path="res://Scenes/Buffer Area/InfoAngel.tscn" id="7_1m7i6"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7ht0s"]
 
@@ -120,5 +122,11 @@ bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.3764706)
 line_color = Color(0.654902, 0.654902, 0.654902, 0.3529412)
 highlight_color = Color(0.23137255, 0.23137255, 0.23137255, 0.6156863)
 
-[node name="Upgrade" parent="." unique_id=892918844 instance=ExtResource("3_1sao5")]
-position = Vector2(90, 642.00006)
+[node name="Info" parent="." unique_id=892918844 instance=ExtResource("7_1m7i6")]
+position = Vector2(174.00002, 642)
+
+[node name="Progress" parent="." unique_id=1087199615 instance=ExtResource("6_8ekdt")]
+position = Vector2(323.00003, 642)
+
+[node name="Upgrade" parent="." unique_id=441509498 instance=ExtResource("3_1sao5")]
+position = Vector2(34, 640.99994)

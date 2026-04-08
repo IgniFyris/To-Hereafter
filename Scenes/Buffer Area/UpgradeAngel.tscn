@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi1rx"]
 size = Vector2(332.54166, 261.55847)
 
-[node name="Angel2" type="Sprite2D" unique_id=892918844 node_paths=PackedStringArray("interactable")]
+[node name="Upgrade" type="Sprite2D" unique_id=892918844 node_paths=PackedStringArray("interactable")]
 scale = Vector2(0.27665707, 0.58113205)
 texture = ExtResource("1_j5fyi")
 script = ExtResource("2_llt0b")
