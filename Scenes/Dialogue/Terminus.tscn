@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_3a5ct"]
 [ext_resource type="Texture2D" uid="uid://0y4jv3y38by0" path="res://Assets/Dialogue/DialogueBox.png" id="2_gdl48"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_gdl48"]
+[ext_resource type="FontFile" uid="uid://djh4isl1mr8el" path="res://Assets/Fonts/TerminusFont/Almendra-Regular.ttf" id="4_xeesf"]
+[ext_resource type="FontFile" uid="uid://d0l5wvjb85ss6" path="res://Assets/Fonts/TerminusFont/Almendra-Bold.ttf" id="5_d621c"]
+[ext_resource type="FontFile" uid="uid://bn2fy3r2trm8a" path="res://Assets/Fonts/TerminusFont/Almendra-BoldItalic.ttf" id="6_l587c"]
+[ext_resource type="FontFile" uid="uid://bpcb1o8q08x5i" path="res://Assets/Fonts/TerminusFont/Almendra-Italic.ttf" id="7_fvnt3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -147,6 +151,10 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("4_xeesf")
+theme_override_fonts/bold_font = ExtResource("5_d621c")
+theme_override_fonts/bold_italics_font = ExtResource("6_l587c")
+theme_override_fonts/italics_font = ExtResource("7_fvnt3")
 text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1162966119]
@@ -170,6 +178,10 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_vertical = 8
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("4_xeesf")
+theme_override_fonts/bold_font = ExtResource("5_d621c")
+theme_override_fonts/bold_italics_font = ExtResource("6_l587c")
+theme_override_fonts/italics_font = ExtResource("7_fvnt3")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
