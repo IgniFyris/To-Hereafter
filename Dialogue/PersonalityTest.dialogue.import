@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://e4mi38vfwerr"
+path="res://.godot/imported/PersonalityTest.dialogue-476e1c080fac413e6a1a5db835d472c9.tres"
+
+[deps]
+
+source_file="res://Dialogue/PersonalityTest.dialogue"
+dest_files=["res://.godot/imported/PersonalityTest.dialogue-476e1c080fac413e6a1a5db835d472c9.tres"]
+
+[params]
+
+defaults=true
