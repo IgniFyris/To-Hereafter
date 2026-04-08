@@ -2,10 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://go6x543fa7e8" path="res://Assets/Personality Test/Option.png" id="1_3v4q6"]
 [ext_resource type="Texture2D" uid="uid://db0hjl0a73eb0" path="res://Assets/Personality Test/OptionH.png" id="2_8oaa1"]
+[ext_resource type="Script" uid="uid://cvjhg80kfpiaa" path="res://Scripts/PersonalityTest/option_button_ambitious.gd" id="3_mgdgp"]
 
 [node name="OptionButtonAmb" type="TextureButton" unique_id=1721576700]
+modulate = Color(0.9882353, 0, 0, 1)
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_3v4q6")
 texture_pressed = ExtResource("1_3v4q6")
 texture_hover = ExtResource("2_8oaa1")
+script = ExtResource("3_mgdgp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

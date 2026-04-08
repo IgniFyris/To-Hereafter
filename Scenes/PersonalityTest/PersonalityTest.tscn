@@ -26,8 +26,7 @@ offset_bottom = 400.0
 color = Color(0, 0, 0, 1)
 
 [node name="Terminus" type="Sprite2D" parent="." unique_id=2085223683]
-visible = false
-position = Vector2(699, 535)
+position = Vector2(60, 204)
 scale = Vector2(0.76662904, 0.766629)
 texture = ExtResource("1_kx1fu")
 

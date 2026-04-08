@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bbvenmgj1c6y8" path="res://buffer_area.gd" id="1_1sao5"]
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="1_dx6ns"]
 [ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Buffer Area/Angel.tscn" id="3_1sao5"]
+[ext_resource type="PackedScene" uid="uid://dshah3f0rfdhk" path="res://Scenes/main.tscn" id="4_dinao"]
+[ext_resource type="PackedScene" uid="uid://byk0nbaiqbc55" path="res://Scenes/selection_wheel.tscn" id="5_2mgux"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7ht0s"]
 
