@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://bbvenmgj1c6y8" path="res://buffer_area.gd" id="1_1sao5"]
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="1_dx6ns"]
 [ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Angel.tscn" id="3_1sao5"]
-[ext_resource type="PackedScene" uid="uid://dshah3f0rfdhk" path="res://Scenes/main.tscn" id="4_dinao"]
-[ext_resource type="PackedScene" uid="uid://byk0nbaiqbc55" path="res://Scenes/selection_wheel.tscn" id="5_2mgux"]
+[ext_resource type="PackedScene" uid="uid://byk0nbaiqbc55" path="res://Scenes/selection_wheel.tscn" id="4_dinao"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7ht0s"]
 
@@ -55,20 +54,4 @@ y_sort_enabled = true
 position = Vector2(162, 594)
 scale = Vector2(-0.44956776, 0.9358491)
 
-[node name="Main" parent="." unique_id=1377387565 instance=ExtResource("4_dinao")]
-
-[node name="SelectionWheel" parent="." unique_id=1740633210 instance=ExtResource("5_2mgux")]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 612.0
-offset_top = 2754.0
-offset_right = 612.0
-offset_bottom = 2754.0
-grow_horizontal = 1
-grow_vertical = 1
-bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.3764706)
-line_color = Color(0.654902, 0.654902, 0.654902, 0.3529412)
-highlight_color = Color(0.23137255, 0.23137255, 0.23137255, 0.6156863)
+[node name="SelectionWheel" parent="." unique_id=1740633210 instance=ExtResource("4_dinao")]
