@@ -4,7 +4,10 @@ func _process(_delta):
 	if Input.is_action_just_pressed("transformation"):
 		$SelectionWheel.show()
 		Engine.time_scale = 0.2
+		get_viewport().warp_mouse(get_viewport().get_visible_rect().size / 2)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	elif Input.is_action_just_released("transformation"):	
-		var tool = $SelectionWheel.Close()
-		$Label.text = "Player Transformation: " + tool
+		var transform = $SelectionWheel.Close()
+		$Label.text = "Player Transformation: " + transform
 		Engine.time_scale = 1
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

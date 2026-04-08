@@ -5,3 +5,6 @@ func _process(_delta):
 		$SelectionWheel.show()
 	elif Input.is_action_just_released("transformation"):	
 		$SelectionWheel.Close()
+		
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
