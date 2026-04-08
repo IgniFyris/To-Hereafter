@@ -26,11 +26,13 @@ offset_bottom = 400.0
 color = Color(0, 0, 0, 1)
 
 [node name="Terminus" type="Sprite2D" parent="." unique_id=2085223683]
+visible = false
 position = Vector2(60, 204)
 scale = Vector2(0.76662904, 0.766629)
 texture = ExtResource("1_kx1fu")
 
 [node name="OptionsContainer" type="VBoxContainer" parent="." unique_id=771200413]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

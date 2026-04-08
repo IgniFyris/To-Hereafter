@@ -3,3 +3,9 @@
 [color=#A4BAB7]???[/color]: [speed=0.5]I am sure you are aware, [wait=0.3]however,[wait=0.3] that your initial mental state must be reviewed before you are able to showcase your physical abilities.
 [color=#A4BAB7]???[/color]: [speed=0.2]Simply answer the following questions as [b][shake]honestly[/shake][/b] as possible.
 => END
+
+~ test_done
+[color=#A4BAB7]???[/color]: . . .
+[color=#A4BAB7]???[/color]: [speed=0.5]I see. . . [wait=0.5]What an interesting soul you are.
+[color=#A4BAB7]???[/color]: [speed=0.5]We can now proceed with your physical assessment.
+=> END

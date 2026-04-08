@@ -5,7 +5,13 @@ var optionsButtonsCourage: PackedScene = preload("uid://cnqomw0enool4")
 var optionsButtonsComp: PackedScene = preload("uid://dnw2bv5aebpyx")
 var resource = load("uid://e4mi38vfwerr")
 var q_num = 1
-var instantiated = false
+
+var amb_num = 0
+var comp_num = 0
+var cour_num = 0
+
+var last_soul
+
 @onready var Terminus = $Terminus
 @onready var OptionsContainer = $OptionsContainer
 
@@ -21,7 +27,7 @@ func _ready() -> void:
 	
 	Terminus.visible = false
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	
 	OptionsContainer.visible = true
 	set_process(true)
@@ -33,6 +39,7 @@ func _process(_delta: float) -> void:
 	else:
 		set_process(false)
 		OptionsContainer.visible = false
+		personality_tally()
 
 func personality_test():
 	var optionsAmb = optionsButtonsAmb.instantiate()
@@ -49,3 +56,23 @@ func personality_test():
 		OptionsContainer.add_child(chosenButton)
 		q_buttons.remove_at(randomNum)
 	
+func personality_tally():
+	var tally = [amb_num, comp_num, cour_num]
+	var highest = tally.max()
+	var max_index = tally.find(highest)
+	
+	if max_index == 0:
+		last_soul = "Ambitious"
+	elif max_index == 1:
+		last_soul = "Compassionate"
+	elif max_index == 2:
+		last_soul = "Courage"
+		
+	await get_tree().create_timer(1.5).timeout
+	
+	Terminus.visible = true
+	DialogueManager.show_dialogue_balloon(resource, "test_done")
+	
+	await DialogueManager.dialogue_ended
+	
+	SceneLoader.load_scene("uid://f1pyot7nea26", 1)

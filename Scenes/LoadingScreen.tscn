@@ -44,10 +44,10 @@ script = ExtResource("1_kddo8")
 animation_player = NodePath("AnimationPlayer")
 
 [node name="FadeScreen" type="ColorRect" parent="." unique_id=2124430119]
-offset_left = -22.0
-offset_top = -21.0
-offset_right = 1301.0
-offset_bottom = 744.0
+offset_left = -2387.8354
+offset_top = -1389.0
+offset_right = 3666.8354
+offset_bottom = 2112.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=460460859]
