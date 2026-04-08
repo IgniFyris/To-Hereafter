@@ -66,5 +66,4 @@ func _on_dash_timer_timeout() -> void:
 func _on_dash_cooldown_timeout() -> void:
 	can_dash = true
 	
-if Input.is_action_just_pressed("transform"):
 	

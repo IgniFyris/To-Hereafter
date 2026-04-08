@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://f1pyot7nea26"]
 
+[ext_resource type="Script" uid="uid://bbvenmgj1c6y8" path="res://buffer_area.gd" id="1_1sao5"]
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="1_dx6ns"]
 [ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Angel.tscn" id="3_1sao5"]
+[ext_resource type="PackedScene" uid="uid://dshah3f0rfdhk" path="res://Scenes/main.tscn" id="4_dinao"]
+[ext_resource type="PackedScene" uid="uid://byk0nbaiqbc55" path="res://Scenes/selection_wheel.tscn" id="5_2mgux"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7ht0s"]
 
@@ -10,9 +13,24 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dx6ns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ht0s"]
-size = Vector2(3505, 102)
+size = Vector2(3108, 102)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2mgux"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0tg40"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aavbn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5afpu"]
+size = Vector2(200, 1405)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rg6d3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrqow"]
+size = Vector2(200, 1405)
 
 [node name="Buffer Area" type="Node2D" unique_id=909989474]
+script = ExtResource("1_1sao5")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=686778178]
 
@@ -33,20 +51,76 @@ zoom = Vector2(0.935, 0.935)
 position_smoothing_enabled = true
 position_smoothing_speed = 9.0
 
-[node name="Platform" type="StaticBody2D" parent="." unique_id=1240100353]
+[node name="Map" type="Node2D" parent="." unique_id=670758794]
 position = Vector2(655, 769)
+
+[node name="Floor" type="StaticBody2D" parent="Map" unique_id=1240100353]
 physics_material_override = SubResource("PhysicsMaterial_1sao5")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Platform" unique_id=1484631529]
+[node name="Sprite" type="Sprite2D" parent="Map/Floor" unique_id=1484631529]
 position = Vector2(1.1920929e-07, 148.44458)
 scale = Vector2(3498.0002, 399.11075)
 texture = SubResource("PlaceholderTexture2D_dx6ns")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=509893825]
+[node name="Hitbox" type="CollisionShape2D" parent="Map/Floor" unique_id=509893825]
 shape = SubResource("RectangleShape2D_7ht0s")
+
+[node name="Celing" type="StaticBody2D" parent="Map" unique_id=184765078]
+position = Vector2(3, -1508)
+rotation = 3.1415927
+physics_material_override = SubResource("PhysicsMaterial_2mgux")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Map/Celing" unique_id=739767658]
+position = Vector2(1.1920929e-07, 148.44458)
+rotation = 3.1415927
+scale = Vector2(3498.0002, 399.11075)
+texture = SubResource("PlaceholderTexture2D_0tg40")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Map/Celing" unique_id=1207344100]
+shape = SubResource("RectangleShape2D_7ht0s")
+
+[node name="Walls" type="StaticBody2D" parent="Map" unique_id=1545244235]
+metadata/_edit_group_ = true
+
+[node name="Left" type="Sprite2D" parent="Map/Walls" unique_id=1747939024]
+position = Vector2(-1543.5, -759.50006)
+scale = Vector2(393.00003, 1411)
+texture = SubResource("PlaceholderTexture2D_aavbn")
+
+[node name="Left2" type="CollisionShape2D" parent="Map/Walls" unique_id=1598890335]
+position = Vector2(-1456, -756.5)
+shape = SubResource("RectangleShape2D_5afpu")
+
+[node name="Right" type="Sprite2D" parent="Map/Walls" unique_id=1713314790]
+position = Vector2(1548, -755.75006)
+scale = Vector2(393.00003, 1410.4999)
+texture = SubResource("PlaceholderTexture2D_rg6d3")
+
+[node name="Right2" type="CollisionShape2D" parent="Map/Walls" unique_id=1518996136]
+position = Vector2(1452, -754)
+shape = SubResource("RectangleShape2D_nrqow")
 
 [node name="Angel" parent="." unique_id=892918844 instance=ExtResource("3_1sao5")]
 y_sort_enabled = true
 position = Vector2(162, 594)
 scale = Vector2(-0.44956776, 0.9358491)
+
+[node name="Radial Menu" parent="." unique_id=1377387565 instance=ExtResource("4_dinao")]
+
+[node name="SelectionWheel" parent="." unique_id=1740633210 instance=ExtResource("5_2mgux")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 612.0
+offset_top = 2754.0
+offset_right = 612.0
+offset_bottom = 2754.0
+grow_horizontal = 1
+grow_vertical = 1
+bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.3764706)
+line_color = Color(0.654902, 0.654902, 0.654902, 0.3529412)
+highlight_color = Color(0.23137255, 0.23137255, 0.23137255, 0.6156863)
