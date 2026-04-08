@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ldbuk4h6ifk5"
-path="res://.godot/imported/JackdawRender.png-146cd39941b5826f6a6e1c6c151b5fc6.ctex"
+uid="uid://go6x543fa7e8"
+path="res://.godot/imported/Option.png-a07e733f54be27c8b44c1eb933e9cace.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personality Test/JackdawRender.png"
-dest_files=["res://.godot/imported/JackdawRender.png-146cd39941b5826f6a6e1c6c151b5fc6.ctex"]
+source_file="res://Assets/Personality Test/Option.png"
+dest_files=["res://.godot/imported/Option.png-a07e733f54be27c8b44c1eb933e9cace.ctex"]
 
 [params]
 

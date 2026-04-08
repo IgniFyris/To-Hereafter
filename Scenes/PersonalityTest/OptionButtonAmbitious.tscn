@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://etxrw1xsmd7f"]
+
+[ext_resource type="Texture2D" uid="uid://go6x543fa7e8" path="res://Assets/Personality Test/Option.png" id="1_3v4q6"]
+[ext_resource type="Texture2D" uid="uid://db0hjl0a73eb0" path="res://Assets/Personality Test/OptionH.png" id="2_8oaa1"]
+
+[node name="OptionButtonAmb" type="TextureButton" unique_id=1721576700]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_3v4q6")
+texture_pressed = ExtResource("1_3v4q6")
+texture_hover = ExtResource("2_8oaa1")
