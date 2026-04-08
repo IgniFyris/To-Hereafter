@@ -107,7 +107,7 @@ y_sort_enabled = true
 position = Vector2(162, 594)
 scale = Vector2(-0.44956776, 0.9358491)
 
-[node name="Main" parent="." unique_id=1377387565 instance=ExtResource("4_dinao")]
+[node name="Radial Menu" parent="." unique_id=1377387565 instance=ExtResource("4_dinao")]
 
 [node name="SelectionWheel" parent="." unique_id=1740633210 instance=ExtResource("5_2mgux")]
 anchors_preset = 0
