@@ -60,10 +60,11 @@ func _physics_process(delta):
 func gravityget() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
 
-
+# dashing
 func _on_dash_timer_timeout() -> void:
 	dashing = false
-
-
 func _on_dash_cooldown_timeout() -> void:
 	can_dash = true
+	
+if Input.is_action_just_pressed("transform"):
+	
