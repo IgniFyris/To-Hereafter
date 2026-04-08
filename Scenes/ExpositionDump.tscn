@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://37od35tv80ij" path="res://Assets/ExpoDump/ExpoDump3.png" id="5_lli37"]
 [ext_resource type="Texture2D" uid="uid://bpo5i6ncy06ki" path="res://Assets/ExpoDump/ExpoDumpH2.png" id="6_0rq0a"]
 [ext_resource type="Texture2D" uid="uid://w8q1yga8q2d8" path="res://Assets/ExpoDump/ExpoDumpH3.png" id="8_emedc"]
+[ext_resource type="Texture2D" uid="uid://bl1w232row1db" path="res://Assets/ExpoDump/PsychopompExpoDump.png" id="9_emedc"]
+[ext_resource type="Texture2D" uid="uid://b2uvev7quxeir" path="res://Assets/ExpoDump/PsychopompExpoDumpH.png" id="10_u2fu0"]
 
 [node name="ExpositionDump" type="Node2D" unique_id=1052169880]
 script = ExtResource("1_8lucr")
@@ -77,6 +79,27 @@ texture_pressed = ExtResource("5_lli37")
 texture_hover = ExtResource("8_emedc")
 script = ExtResource("3_t7oer")
 
+[node name="ExpoDump4" type="TextureButton" parent="." unique_id=850965113]
+modulate = Color(0.69405985, 0.13687369, 0.5179865, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 454.0
+offset_top = 65.0
+offset_right = 854.0
+offset_bottom = 465.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.195, 1.195)
+pivot_offset = Vector2(200, 200)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_emedc")
+texture_pressed = ExtResource("9_emedc")
+texture_hover = ExtResource("10_u2fu0")
+script = ExtResource("3_t7oer")
+
 [connection signal="pressed" from="ExpoDump1" to="." method="_on_expo_dump_1_pressed"]
 [connection signal="pressed" from="ExpoDump2" to="." method="_on_expo_dump_2_pressed"]
 [connection signal="pressed" from="ExpoDump3" to="." method="_on_expo_dump_3_pressed"]
+[connection signal="pressed" from="ExpoDump4" to="." method="_on_expo_dump_4_pressed"]

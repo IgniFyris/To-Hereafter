@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://f1pyot7nea26"]
 
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="1_dx6ns"]
-[ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Angel.tscn" id="3_1sao5"]
+[ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Buffer Area/Angel.tscn" id="3_1sao5"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7ht0s"]
 
