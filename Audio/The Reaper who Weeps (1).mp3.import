@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btx8wdvm4brrp"
+path="res://.godot/imported/The Reaper who Weeps (1).mp3-39bf8c4b6c3b2fda49e9b1d117132c44.mp3str"
+
+[deps]
+
+source_file="res://Audio/The Reaper who Weeps (1).mp3"
+dest_files=["res://.godot/imported/The Reaper who Weeps (1).mp3-39bf8c4b6c3b2fda49e9b1d117132c44.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
