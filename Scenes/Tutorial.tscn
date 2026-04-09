@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cm0iwg2fcqfic"]
-
-[ext_resource type="Script" uid="uid://dadf1n2r8sv4" path="res://Scripts/Tutorial.gd" id="1_wduq8"]
-
-[node name="Tutorial" type="Node2D" unique_id=1270707748]
-script = ExtResource("1_wduq8")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=101170125]
