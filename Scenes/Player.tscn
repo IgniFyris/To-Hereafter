@@ -58,6 +58,7 @@ height = 68.0
 [node name="Player" type="CharacterBody2D" unique_id=572479440]
 collision_layer = 2
 script = ExtResource("1_gntrk")
+jump_time_to_descent = 0.15
 
 [node name="Animations" type="AnimatedSprite2D" parent="." unique_id=1954718225]
 position = Vector2(-4.172325e-07, -5.364418e-07)
