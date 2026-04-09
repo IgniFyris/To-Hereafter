@@ -7,6 +7,7 @@ func _process(_delta):
 		get_viewport().warp_mouse(get_viewport().get_visible_rect().size / 2)
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	elif Input.is_action_just_released("transformation"):	
+		@warning_ignore("shadowed_variable_base_class")
 		var transform = $SelectionWheel.Close()
 		$Label.text = "Player Transformation: " + transform
 		Engine.time_scale = 1
