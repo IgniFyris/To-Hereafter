@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcya7nhdhi0ar"
-path="res://.godot/imported/588220026_857426343444374_6121070237596788635_n.jpg-710b633b100c94b01ab0874ba3c59b19.ctex"
+uid="uid://x17rij6hwgev"
+path="res://.godot/imported/RobloxScreenShot20250601_121453941.png-947504a01d6194b195ee9e1c43fc31bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/588220026_857426343444374_6121070237596788635_n.jpg"
-dest_files=["res://.godot/imported/588220026_857426343444374_6121070237596788635_n.jpg-710b633b100c94b01ab0874ba3c59b19.ctex"]
+source_file="res://Assets/Player/VultureForm/RobloxScreenShot20250601_121453941.png"
+dest_files=["res://.godot/imported/RobloxScreenShot20250601_121453941.png-947504a01d6194b195ee9e1c43fc31bd.ctex"]
 
 [params]
 
