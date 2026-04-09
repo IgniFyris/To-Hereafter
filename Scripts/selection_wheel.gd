@@ -15,6 +15,9 @@ const SPRITE_SIZE = Vector2(32, 32)
 
 var selection = 0
 
+func _ready() -> void:
+	pass
+
 func Close():
 	hide()
 	
