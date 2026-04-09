@@ -4,7 +4,7 @@ var optionsButtonsAmb : PackedScene = preload("uid://etxrw1xsmd7f")
 var optionsButtonsCourage: PackedScene = preload("uid://cnqomw0enool4")
 var optionsButtonsComp: PackedScene = preload("uid://dnw2bv5aebpyx")
 var resource = load("uid://e4mi38vfwerr")
-var q_num = 1
+var q_num = 0
 
 var amb_num = 0
 var comp_num = 0
@@ -14,6 +14,13 @@ var last_soul
 
 @onready var Terminus = $Terminus
 @onready var OptionsContainer = $OptionsContainer
+
+@onready var Q1 = $OptionsContainer/Q1
+@onready var Q2 = $OptionsContainer/Q2
+@onready var Q3 = $OptionsContainer/Q3
+@onready var Q4 = $OptionsContainer/Q4
+@onready var Q5 = $OptionsContainer/Q5
+@onready var questions = [Q1, Q2, Q3, Q4, Q5] 
 
 func _ready() -> void:
 	set_process(false)
@@ -33,8 +40,8 @@ func _ready() -> void:
 	set_process(true)
 	
 func _process(_delta: float) -> void:
-	if q_num != 6:
-		if not OptionsContainer.get_child_count() == 4:
+	if q_num != 5:
+		if not OptionsContainer.get_child_count() == 9:
 			personality_test()
 	else:
 		set_process(false)
@@ -42,6 +49,7 @@ func _process(_delta: float) -> void:
 		personality_tally()
 
 func personality_test():
+	questions[q_num].visible = true
 	var optionsAmb = optionsButtonsAmb.instantiate()
 	var optionsCourage = optionsButtonsCourage.instantiate()
 	var optionsComp = optionsButtonsComp.instantiate()
@@ -67,6 +75,8 @@ func personality_tally():
 		last_soul = "Compassionate"
 	elif max_index == 2:
 		last_soul = "Courage"
+		
+	print(last_soul)
 		
 	await get_tree().create_timer(1.5).timeout
 	
