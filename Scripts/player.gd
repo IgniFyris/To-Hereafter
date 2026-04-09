@@ -19,12 +19,17 @@ var can_dash = true
 @export var speed_multipilier = 30
 var direction = 0
 
-#Crow Transformation
 const FLAP_SPEED : int = 400
 
 func _physics_process(delta):
 	#👻REGULAR FORM
 	if $"Radial Menu/UI".form == "None" or $"Radial Menu/UI".form == "none":
+		for i in $Animations.get_children():
+			if i.name == "NormalFormAnims":
+				i.visible = true
+			else:
+				i.visible = false
+		
 		speed = 10
 		velocity.y += gravityget() * delta
 
@@ -60,6 +65,12 @@ func _physics_process(delta):
 
 	#🐦‍⬛ CROW TRANSFORMATION
 	elif $"Radial Menu/UI".form == "Transform 1":
+		for i in $Animations.get_children():
+			if i.name == "CrowFormAnims":
+				i.visible = true
+			else:
+				i.visible = false
+		
 		direction = Input.get_axis("move_left", "move_right")
 		speed = 10
 		if direction:
@@ -81,6 +92,12 @@ func _physics_process(delta):
 	
 	#🕯️MOTH TRANSFORMATION
 	elif $"Radial Menu/UI".form == "Transform 2":
+		for i in $Animations.get_children():
+			if i.name == "MothFormAnims":
+				i.visible = true
+			else:
+				i.visible = false
+		
 		direction = Input.get_axis("move_left", "move_right")
 		speed = 6
 		if direction:
@@ -102,6 +119,12 @@ func _physics_process(delta):
 	
 	#🦅VULTURE TRANSFORMATION
 	elif $"Radial Menu/UI".form == "Transform 3":
+		for i in $Animations.get_children():
+			if i.name == "VultureFormAnims":
+				i.visible = true
+			else:
+				i.visible = false
+				
 		direction = Input.get_axis("move_left", "move_right")
 		speed = 3
 		if direction:
@@ -123,10 +146,22 @@ func _physics_process(delta):
 	
 	#🌹FLOWER TRANSFORMATION
 	elif $"Radial Menu/UI".form == "Transform 4":
+		for i in $Animations.get_children():
+			if i.name == "FlowerFormAnims":
+				i.visible = true
+			else:
+				i.visible = false
+				
 		velocity.y += gravityget() * delta
 	
 	#⌛HOURGLASS TRANSFORMATION
 	elif $"Radial Menu/UI".form == "Transform 5":
+		for i in $Animations.get_children():
+			if i.name == "HourglassFormAnims":
+				i.visible = true
+			else:
+				i.visible = false
+				
 		pass
 		
 		
