@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var form = "none"
+
 func _process(_delta):
 	if Input.is_action_just_pressed("transformation"):
 		$SelectionWheel.show()
@@ -9,6 +11,7 @@ func _process(_delta):
 	elif Input.is_action_just_released("transformation"):	
 		@warning_ignore("shadowed_variable_base_class")
 		var transform = $SelectionWheel.Close()
+		form = transform
 		$Label.text = "Player Transformation: " + transform
 		Engine.time_scale = 1
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

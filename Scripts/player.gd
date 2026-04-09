@@ -19,10 +19,10 @@ var can_dash = true
 @export var speed_multipilier = 30
 var direction = 0
 
-var dead = false
-
 func _physics_process(delta):
-	if not dead:
+	#Regular Form
+	if $"Radial Menu/UI".form == "None" or $"Radial Menu/UI".form == "none":
+		self.motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
 		velocity.y += gravityget() * delta
 
 		# Handle jump.
@@ -54,6 +54,17 @@ func _physics_process(delta):
 		
 		if was_on_floor and not is_on_floor():
 			CoyoteTimer.start()
+
+	elif $"Radial Menu/UI".form == "Transform 1":
+		self.motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+		
+		direction = Input.get_axis("move_left", "move_right")
+		if direction:
+			velocity.x = direction * speed * speed_multipilier
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed * speed_multipilier)
+			
+		move_and_slide()
 	
 	if Input.is_action_just_pressed("transformation"):
 		$SelectionWheel.show()
