@@ -55,6 +55,11 @@ func _physics_process(delta):
 		if was_on_floor and not is_on_floor():
 			CoyoteTimer.start()
 	
+	if Input.is_action_just_pressed("transformation"):
+		$SelectionWheel.show()
+	elif Input.is_action_just_released("transformation"):	
+		$SelectionWheel.Close()
+	
 func gravityget() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
 
