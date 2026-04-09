@@ -29,8 +29,8 @@ func generate_level():
 	var tries = 0
 	
 	while rooms.size() < roomAmt and tries < max_attempts:
-		var w =  randi_range(15, maxRoomWidthRange)
-		var h =  randi_range(5, maxRoomHeightRange)
+		var w =  randi_range(30, maxRoomWidthRange)
+		var h =  randi_range(15, maxRoomHeightRange)
 		var x =  randi_range(1, LEVEL_WIDTH - w - 1)
 		var y =  randi_range(1, LEVEL_HEIGHT - h - 1)
 		var room = Rect2(x, y, w, h)
@@ -83,7 +83,7 @@ func create_level():
 	add_walls()
 	render_level()
 	
-func carve_corridor(from: Vector2, to: Vector2, width: int = 2):
+func carve_corridor(from: Vector2, to: Vector2, width: int = 4):
 	var min_width = -width/2
 	var max_width = width/2
 	

@@ -19,10 +19,13 @@ var can_dash = true
 @export var speed_multipilier = 30
 var direction = 0
 
+#Crow Transformation
+const FLAP_SPEED : int = 400
+
 func _physics_process(delta):
-	#Regular Form
+	#👻REGULAR FORM
 	if $"Radial Menu/UI".form == "None" or $"Radial Menu/UI".form == "none":
-		self.motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
+		speed = 10
 		velocity.y += gravityget() * delta
 
 		# Handle jump.
@@ -55,17 +58,78 @@ func _physics_process(delta):
 		if was_on_floor and not is_on_floor():
 			CoyoteTimer.start()
 
+	#🐦‍⬛ CROW TRANSFORMATION
 	elif $"Radial Menu/UI".form == "Transform 1":
-		self.motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
-		
 		direction = Input.get_axis("move_left", "move_right")
+		speed = 10
 		if direction:
 			velocity.x = direction * speed * speed_multipilier
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed * speed_multipilier)
 			
+		velocity.y += gravityget() * delta
+			
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = -FLAP_SPEED
+		
 		move_and_slide()
+		
+		if not is_on_floor() and velocity.y > 0:
+			pass #falling
+		elif not is_on_floor() and velocity.y < 0:
+			pass #flying
 	
+	#🕯️MOTH TRANSFORMATION
+	elif $"Radial Menu/UI".form == "Transform 2":
+		direction = Input.get_axis("move_left", "move_right")
+		speed = 6
+		if direction:
+			velocity.x = direction * speed * speed_multipilier
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed * speed_multipilier)
+			
+		velocity.y += gravityget() * delta
+			
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = -FLAP_SPEED
+		
+		move_and_slide()
+		
+		if not is_on_floor() and velocity.y > 0:
+			pass #falling
+		elif not is_on_floor() and velocity.y < 0:
+			pass #flying
+	
+	#🦅VULTURE TRANSFORMATION
+	elif $"Radial Menu/UI".form == "Transform 3":
+		direction = Input.get_axis("move_left", "move_right")
+		speed = 3
+		if direction:
+			velocity.x = direction * speed * speed_multipilier
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed * speed_multipilier)
+			
+		velocity.y += gravityget() * delta
+			
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = -FLAP_SPEED
+		
+		move_and_slide()
+		
+		if not is_on_floor() and velocity.y > 0:
+			pass #falling
+		elif not is_on_floor() and velocity.y < 0:
+			pass #flying
+	
+	#🌹FLOWER TRANSFORMATION
+	elif $"Radial Menu/UI".form == "Transform 4":
+		velocity.y += gravityget() * delta
+	
+	#⌛HOURGLASS TRANSFORMATION
+	elif $"Radial Menu/UI".form == "Transform 5":
+		pass
+		
+		
 	if Input.is_action_just_pressed("transformation"):
 		$SelectionWheel.show()
 	elif Input.is_action_just_released("transformation"):	
@@ -79,5 +143,4 @@ func _on_dash_timer_timeout() -> void:
 	dashing = false
 func _on_dash_cooldown_timeout() -> void:
 	can_dash = true
-	
 	
