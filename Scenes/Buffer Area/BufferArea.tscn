@@ -69,7 +69,7 @@ texture = SubResource("PlaceholderTexture2D_dx6ns")
 shape = SubResource("RectangleShape2D_7ht0s")
 
 [node name="Celing" type="StaticBody2D" parent="Map" unique_id=184765078]
-position = Vector2(3, -1508)
+position = Vector2(25, -851)
 rotation = 3.1415927
 physics_material_override = SubResource("PhysicsMaterial_2mgux")
 metadata/_edit_group_ = true

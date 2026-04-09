@@ -12,13 +12,11 @@ extends CharacterBody2D
 @export var jump_time_to_peak : float = 0.25
 @export var jump_time_to_descent : float = 0.19
 
-@export var death_scene: StringName = &""
-
-var dash_speed = 50.0
+@export var dash_speed = 50.0
 var dashing = false
 var can_dash = true
 
-var speed_multipilier = 30
+@export var speed_multipilier = 30
 var direction = 0
 
 var dead = false
