@@ -85,4 +85,4 @@ func personality_tally():
 	
 	await DialogueManager.dialogue_ended
 	
-	SceneLoader.load_scene("uid://f1pyot7nea26", 1)
+	SceneLoader.load_scene("uid://c6yf5n1fbfsm8", 1)
