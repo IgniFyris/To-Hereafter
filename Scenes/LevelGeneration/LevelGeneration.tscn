@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6yf5n1fbfsm8"]
 
 [ext_resource type="Script" uid="uid://2risb3kak1sq" path="res://Scripts/Level Generation/level_generation.gd" id="1_75ddt"]
-[ext_resource type="Texture2D" uid="uid://lbqtmhcbmexf" path="res://Assets/Tileset/Tileset.png" id="1_bosrh"]
+[ext_resource type="Texture2D" uid="uid://lbqtmhcbmexf" path="res://Assets/Tilesets/Tileset.png" id="1_bosrh"]
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="3_75ddt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11o54"]
@@ -9,6 +9,7 @@ texture = ExtResource("1_bosrh")
 7:5/0 = 0
 7:6/0 = 0
 7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.9575672, 8, -1.3057747, 8, 8, -8, 8)
+9:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_cxncl"]
 physics_layer_0/collision_layer = 3
@@ -31,8 +32,11 @@ jump_time_to_peak = 0.2
 dash_speed = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1481562400]
-zoom = Vector2(1.975, 1.975)
+zoom = Vector2(0.325, 0.325)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=873617264]
 z_index = -10
 tile_set = SubResource("TileSet_cxncl")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1816038429]
+z_index = -100

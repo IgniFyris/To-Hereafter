@@ -6,6 +6,8 @@ extends Node2D
 @export var maxRoomWidthRange : int
 @export var maxRoomHeightRange : int
 
+@onready var BG = $Background
+
 const LEVEL_WIDTH = 400
 const LEVEL_HEIGHT = 70
 
@@ -63,7 +65,7 @@ func render_level():
 			var tile = levelGrid[y][x]
 			
 			match tile:
-				TileType.FLOOR: tilemap.set_cell(Vector2i(x, y), 0, Vector2i(7,5))
+				TileType.FLOOR: tilemap.set_cell(Vector2i(x, y), 0, Vector2i(9,6))
 				TileType.WALL: tilemap.set_cell(Vector2i(x, y), 0, Vector2i(7,6))
 
 func add_walls():
@@ -79,6 +81,7 @@ func add_walls():
 								levelGrid[ny][nx] = TileType.WALL
 				
 func create_level():
+	configure_bg()
 	place_player(generate_level())
 	add_walls()
 	render_level()
@@ -112,6 +115,11 @@ func carve_corridor(from: Vector2, to: Vector2, width: int = 4):
 					
 func place_player(rooms : Array[Rect2]):
 	player.position = rooms.pick_random().get_center() * 16
-
+	
+func configure_bg():
+	BG.texture = load("uid://ccx3iapeo1m6o")
+	#BG.scale = Vector2(LEVEL_WIDTH, LEVEL_HEIGHT)
+	BG.position = Vector2((LEVEL_WIDTH * 16)/2, (LEVEL_HEIGHT * 16)/2)
+	
 func is_in_bounds(x: int, y: int) -> bool:
 	return x >= 0 and y >= 0 and x < LEVEL_WIDTH and y < LEVEL_HEIGHT
