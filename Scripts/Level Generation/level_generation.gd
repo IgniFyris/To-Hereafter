@@ -5,8 +5,9 @@ extends Node2D
 @export var roomAmt : int
 @export var maxRoomWidthRange : int
 @export var maxRoomHeightRange : int
+@export var bg : String
 
-@onready var BG = $Background
+@onready var BG = $Parallax2D/Background1
 
 const LEVEL_WIDTH = 400
 const LEVEL_HEIGHT = 70
@@ -117,7 +118,7 @@ func place_player(rooms : Array[Rect2]):
 	player.position = rooms.pick_random().get_center() * 16
 	
 func configure_bg():
-	BG.texture = load("uid://ccx3iapeo1m6o")
+	BG.texture = load(bg)
 	#BG.scale = Vector2(LEVEL_WIDTH, LEVEL_HEIGHT)
 	BG.position = Vector2((LEVEL_WIDTH * 16)/2, (LEVEL_HEIGHT * 16)/2)
 	
