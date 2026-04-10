@@ -119,7 +119,6 @@ func place_player(rooms : Array[Rect2]):
 	
 func configure_bg():
 	BG.texture = load(bg)
-	#BG.scale = Vector2(LEVEL_WIDTH, LEVEL_HEIGHT)
 	BG.position = Vector2((LEVEL_WIDTH * 16)/2, (LEVEL_HEIGHT * 16)/2)
 	
 func is_in_bounds(x: int, y: int) -> bool:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vhge4lgu8juk"
-path="res://.godot/imported/LevelGenBg.png-fec362da709bacf12df79b73a63025c3.ctex"
+uid="uid://bmi8gaujxawlr"
+path="res://.godot/imported/MemoryFragment.png-73258f6021ddc0c2002622c8eedc9098.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/LevelGenBg.png"
-dest_files=["res://.godot/imported/LevelGenBg.png-fec362da709bacf12df79b73a63025c3.ctex"]
+source_file="res://Assets/Level Essentials/MemoryFragment.png"
+dest_files=["res://.godot/imported/MemoryFragment.png-73258f6021ddc0c2002622c8eedc9098.ctex"]
 
 [params]
 
