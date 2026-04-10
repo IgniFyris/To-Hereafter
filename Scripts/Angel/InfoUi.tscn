@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://ch1gyevi1bujq"]
+
+[ext_resource type="Texture2D" uid="uid://0y4jv3y38by0" path="res://Assets/Dialogue/DialogueBox.png" id="1_lfib1"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3uvel"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7syh"]
+font_size = 55
+
+[sub_resource type="LabelSettings" id="LabelSettings_38i7g"]
+font_size = 55
+
+[node name="Info" type="Control" unique_id=417360930]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=594059725]
+modulate = Color(1, 1, 1, 0.4627451)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -609.0
+offset_top = -248.0
+offset_right = 609.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_3uvel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1114854609]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = -233.0
+offset_right = 590.0
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 104
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Left" type="VBoxContainer" parent="HBoxContainer" unique_id=1072844802]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Left" unique_id=1181309660]
+layout_mode = 2
+text = "Information"
+label_settings = SubResource("LabelSettings_d7syh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Left" unique_id=1779480091]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Left/ScrollContainer" unique_id=86774059]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Left/ScrollContainer/VBoxContainer" unique_id=1075327300]
+layout_mode = 2
+texture = ExtResource("1_lfib1")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/Left/ScrollContainer/VBoxContainer" unique_id=2008204458]
+layout_mode = 2
+texture = ExtResource("1_lfib1")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/Left/ScrollContainer/VBoxContainer" unique_id=2004648822]
+layout_mode = 2
+texture = ExtResource("1_lfib1")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer/Left/ScrollContainer/VBoxContainer" unique_id=96739467]
+layout_mode = 2
+texture = ExtResource("1_lfib1")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="Right" type="VBoxContainer" parent="HBoxContainer" unique_id=229807339]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Right" unique_id=1411708057]
+layout_mode = 2
+text = "Navigation"
+label_settings = SubResource("LabelSettings_38i7g")
+horizontal_alignment = 1
+vertical_alignment = 1
