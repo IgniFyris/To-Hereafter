@@ -13,10 +13,12 @@ func _ready() -> void:
 	ExpoDump4.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	viewport = get_viewport_rect().size
 	
-	MainMenuMusic.stop()
+	Music.stop()
 	
 	await get_tree().create_timer(2.0).timeout
 	
+	Music.ExpoDumpMusic.play()
+	create_tween().tween_property(Music.ExpoDumpMusic, "volume_db", 0, 1.5)
 	ExpoDump1.beVisible()
 
 func _on_expo_dump_1_pressed() -> void:

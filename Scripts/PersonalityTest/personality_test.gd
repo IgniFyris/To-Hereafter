@@ -26,9 +26,16 @@ func _ready() -> void:
 	set_process(false)
 	OptionsContainer.visible = false
 	Terminus.visible = true
+	
 	await get_tree().create_timer(1.0).timeout
 	
 	DialogueManager.show_dialogue_balloon(resource, "start")
+	
+	await DialogueManager.dialogue_ended
+	
+	create_tween().tween_property(Music.ExpoDumpMusic, "volume_db", -90.0, 5)
+	
+	DialogueManager.show_dialogue_balloon(resource, "spoopy")
 	
 	await DialogueManager.dialogue_ended
 	
@@ -37,6 +44,9 @@ func _ready() -> void:
 	await get_tree().create_timer(1.5).timeout
 	
 	OptionsContainer.visible = true
+	
+	Music.ExpoDumpMusic.stop()
+	Music.PersonalityTest.play()
 	set_process(true)
 	
 func _process(_delta: float) -> void:
@@ -85,4 +95,5 @@ func personality_tally():
 	
 	await DialogueManager.dialogue_ended
 	
+	create_tween().tween_property(Music.PersonalityTest, "volume_db", -90.0, 3)
 	SceneLoader.load_scene("uid://c6yf5n1fbfsm8", 1)

@@ -6,7 +6,7 @@ var width
 var height
 
 func _ready() -> void:
-	MainMenuMusic.play()
+	Music.play()
 	width = get_viewport_rect().size.x
 	height = get_viewport_rect().size.y
 	CLText.modulate.a = 0

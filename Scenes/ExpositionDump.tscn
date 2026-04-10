@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bbxwnl4ctuot6"]
 
-[ext_resource type="Script" uid="uid://dfc2qm24lkhov" path="res://Scripts/exposition_dump.gd" id="1_8lucr"]
+[ext_resource type="Script" uid="uid://dfc2qm24lkhov" path="res://Scripts/ExpoDump/exposition_dump.gd" id="1_8lucr"]
 [ext_resource type="Texture2D" uid="uid://44u85k3eq8pe" path="res://Assets/ExpoDump/ExpoDump.png" id="2_046hu"]
 [ext_resource type="Texture2D" uid="uid://bklytm2h8ccp8" path="res://Assets/ExpoDump/ExpoDumpH.png" id="3_lli37"]
-[ext_resource type="Script" uid="uid://dkp6k6h6c2c04" path="res://Scripts/expo_dump_button.gd" id="3_t7oer"]
+[ext_resource type="Script" uid="uid://dkp6k6h6c2c04" path="res://Scripts/ExpoDump/expo_dump_button.gd" id="3_t7oer"]
 [ext_resource type="Texture2D" uid="uid://dneguaoqm7h85" path="res://Assets/ExpoDump/ExpoDump2.png" id="4_citi3"]
 [ext_resource type="Texture2D" uid="uid://37od35tv80ij" path="res://Assets/ExpoDump/ExpoDump3.png" id="5_lli37"]
 [ext_resource type="Texture2D" uid="uid://bpo5i6ncy06ki" path="res://Assets/ExpoDump/ExpoDumpH2.png" id="6_0rq0a"]
