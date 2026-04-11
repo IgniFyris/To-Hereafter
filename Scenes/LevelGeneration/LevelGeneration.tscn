@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://2risb3kak1sq" path="res://Scripts/Level Generation/level_generation.gd" id="1_75ddt"]
 [ext_resource type="Texture2D" uid="uid://lbqtmhcbmexf" path="res://Assets/Tilesets/Tileset.png" id="1_bosrh"]
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="3_75ddt"]
+[ext_resource type="PackedScene" uid="uid://edgm8i7psjbq" path="res://Scenes/LevelGeneration/sanity_bar.tscn" id="4_usupu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11o54"]
 texture = ExtResource("1_bosrh")
@@ -39,6 +40,18 @@ dash_speed = 25.0
 process_mode = 1
 zoom = Vector2(2.28, 2.28)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=318580028]
+
+[node name="SanityBar" parent="Player/CanvasLayer" unique_id=554092817 instance=ExtResource("4_usupu")]
+modulate = Color(1, 1, 1, 0)
+z_index = 200
+offset_left = 23.0
+offset_top = 706.0
+offset_right = -367.0
+offset_bottom = 746.0
+rotation = -1.5707964
+scale = Vector2(0.76, 0.76)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=873617264]
 process_mode = 1
 z_index = -10
@@ -60,4 +73,5 @@ z_index = -100
 wait_time = 4.0
 autostart = true
 
+[connection signal="value_changed" from="Player/CanvasLayer/SanityBar" to="." method="_on_sanity_bar_value_changed"]
 [connection signal="timeout" from="MonsterSpawn" to="." method="_on_monster_spawn_timeout"]

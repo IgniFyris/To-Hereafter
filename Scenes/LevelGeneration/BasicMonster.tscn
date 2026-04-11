@@ -7,8 +7,8 @@
 radius = 9.0
 height = 40.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5js1u"]
-radius = 43.011627
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5js1u"]
+size = Vector2(46, 51)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nc5b2"]
 height = 42.0
@@ -27,14 +27,12 @@ z_index = -1
 scale = Vector2(0.08759123, 0.087591305)
 texture = ExtResource("1_g4pt1")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1646261286]
-zoom = Vector2(6.215, 6.215)
-
 [node name="Killzone" type="Area2D" parent="." unique_id=1252238070]
 collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=146879749]
-shape = SubResource("CircleShape2D_5js1u")
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_5js1u")
 
 [node name="WallDetectionRay" type="RayCast2D" parent="." unique_id=162703566]
 position = Vector2(0, -11)

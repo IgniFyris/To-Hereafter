@@ -1,6 +1,9 @@
 extends CharacterBody2D
 class_name BasicMonster
 
+signal player_inside
+signal player_outside
+
 var arrowsContainer: PackedScene = preload("uid://hedujnigma4w")
 @export var arrowConYPos : float
 @onready var Sprite = $Sprite2D
@@ -98,6 +101,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body is Player:
+		player_inside.emit()
 		arrowCon = arrowsContainer.instantiate()
 		add_child(arrowCon)
 		arrowRots = arrowCon.arrowRots
@@ -120,6 +124,7 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 
 func _on_killzone_body_exited(body: Node2D) -> void:
 	if body is Player:
+		player_outside.emit()
 		Engine.time_scale = 1
 		if arrowCon:
 			arrowCon.queue_free()
@@ -127,6 +132,10 @@ func _on_killzone_body_exited(body: Node2D) -> void:
 		set_process_input(false)
 
 func kill_self():
+	if get_parent().SanityBar.value + 20 > 500:
+		get_parent().SanityBar.value = get_parent().SanityBar.max_value
+	else:
+		get_parent().SanityBar.value += 20
 	self.queue_free()
 
 func _on_other_mons_checker_body_entered(body: Node2D) -> void:

@@ -6,7 +6,8 @@ signal loading_screen_ready
 var duration = 0
 
 func _ready() -> void:
-	await animation_player.animation_finished
+	var tw = create_tween().set_ignore_time_scale(true).tween_property(self, "modulate:a", 1, 1)
+	await tw.finished
 	loading_screen_ready.emit()
 	
 func _on_progress_changed(_new_value: float) -> void:
@@ -14,6 +15,6 @@ func _on_progress_changed(_new_value: float) -> void:
 	
 func _on_load_finished() -> void:
 	await get_tree().create_timer(duration).timeout
-	animation_player.play_backwards("FadeIn")
-	await animation_player.animation_finished	
+	var tw = create_tween().set_ignore_time_scale(true).tween_property(self, "modulate:a", 0, 1)
+	await tw.finished
 	queue_free()

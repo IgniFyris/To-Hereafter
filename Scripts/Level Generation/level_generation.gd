@@ -11,8 +11,10 @@ var basicMonsterRes: PackedScene = preload("uid://dofox6h2j5foi")
 @export var minRoomHeightRange : int
 @export var bg = load("uid://vhge4lgu8juk")
 
+@onready var playerCam = $Player/Camera2D
 @onready var BG = $Parallax2D/Background1
 @onready var MonsSpawnTimer = $MonsterSpawn
+@onready var SanityBar = $Player/CanvasLayer/SanityBar
 
 var rooms : Array[Rect2] = []
 
@@ -29,8 +31,14 @@ var playerRoom
 
 var spawned_monster_tiles : Array[Vector2i] = []
 
+var UIDString
+
 func _ready():
+	create_tween().set_ignore_time_scale().tween_property(SanityBar, "modulate:a", 1, 2).set_delay(1)
 	spawned_monster_tiles.clear()
+	var UID = ResourceLoader.get_resource_uid(get_tree().current_scene.scene_file_path)
+	UIDString = ResourceUID.id_to_text(UID)
+	
 	create_level()
 
 func generate_level():
@@ -178,6 +186,8 @@ func create_monsters():
 				add_child(basicMonster)
 				spawned_monster_tiles.append(desigTile)
 				monsters += 1
+				basicMonster.player_inside.connect(_on_player_entered)
+				basicMonster.player_outside.connect(_on_player_exited)
 				placed = true
 		
 		attempts += 1
@@ -194,3 +204,14 @@ func is_in_any_position_in_any_room(world_pos: Vector2) -> bool:
 		if pixel_room.has_point(world_pos):
 			return true
 	return false
+
+func _on_player_entered():
+	create_tween().set_ignore_time_scale(true).tween_property(playerCam, "zoom", Vector2(2.78, 2.78), 1).set_ease(Tween.EASE_IN_OUT)
+	
+func _on_player_exited():
+	create_tween().set_ignore_time_scale(true).tween_property(playerCam, "zoom", Vector2(2.28, 2.28), 1).set_ease(Tween.EASE_IN_OUT)
+
+func _on_sanity_bar_value_changed(value: float) -> void:
+	if value < 0 or value == 0:
+		create_tween().set_ignore_time_scale().tween_property(SanityBar, "modulate:a", 0, 1)
+		SceneLoader.load_scene(UIDString, 1)
