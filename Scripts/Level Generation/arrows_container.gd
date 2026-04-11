@@ -13,8 +13,6 @@ var arrowRots = []
 func _ready() -> void:
 	Engine.time_scale = 0.05
 	create_arrows()
-	
-
 
 func delete_arrows():
 	self.queue_free()

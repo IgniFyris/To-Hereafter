@@ -7,7 +7,7 @@ var basicMonsterRes: PackedScene = preload("uid://dofox6h2j5foi")
 @export var roomAmt : int
 @export var maxRoomWidthRange : int
 @export var maxRoomHeightRange : int
-@export var bg : String
+@export var bg = load("uid://vhge4lgu8juk")
 
 @onready var BG = $Parallax2D/Background1
 
@@ -123,7 +123,7 @@ func place_player():
 	player.position = rooms.pick_random().get_center() * 16
 	
 func configure_bg():
-	BG.texture = load(bg)
+	BG.texture = bg
 	BG.position = Vector2((LEVEL_WIDTH * 16)/2, (LEVEL_HEIGHT * 16)/2)
 	
 func is_in_bounds(x: int, y: int) -> bool:

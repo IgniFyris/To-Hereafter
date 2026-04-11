@@ -23,6 +23,7 @@ player = NodePath("Player")
 roomAmt = 50
 maxRoomWidthRange = 50
 maxRoomHeightRange = 20
+bg = "uid://vhge4lgu8juk"
 
 [node name="Player" parent="." unique_id=572479440 instance=ExtResource("3_75ddt")]
 process_mode = 1
@@ -35,7 +36,7 @@ dash_speed = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1481562400]
 process_mode = 1
-zoom = Vector2(2.6, 2.6)
+zoom = Vector2(2.185, 2.185)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=873617264]
 process_mode = 1

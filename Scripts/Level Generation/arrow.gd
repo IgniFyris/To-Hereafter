@@ -1,6 +1,6 @@
 extends Control
 
-var rotations = [0, 90, -180, -270]
+var rotations = [0, 90, -180, -90]
 var rot = randi_range(0, 3)
 
 func _ready() -> void:
