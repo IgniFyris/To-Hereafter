@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dofox6h2j5foi"]
+
+[ext_resource type="Script" uid="uid://uv4kmgfadu1d" path="res://Scripts/Level Generation/basic_monster.gd" id="1_5js1u"]
+[ext_resource type="Texture2D" uid="uid://vln3mcigi8i3" path="res://Assets/Level Essentials/Monsters/BasicMonster.png" id="1_g4pt1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5js1u"]
+radius = 7.0
+height = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5js1u"]
+radius = 43.011627
+
+[node name="BasicMonster" type="CharacterBody2D" unique_id=1092893214]
+collision_layer = 3
+script = ExtResource("1_5js1u")
+arrowConYPos = -30.41
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=95598111]
+shape = SubResource("CapsuleShape2D_5js1u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320446185]
+z_index = -1
+scale = Vector2(0.08759123, 0.087591305)
+texture = ExtResource("1_g4pt1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1646261286]
+zoom = Vector2(6.215, 6.215)
+
+[node name="Killzone" type="Area2D" parent="." unique_id=1252238070]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=146879749]
+shape = SubResource("CircleShape2D_5js1u")
+
+[connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="body_exited" from="Killzone" to="." method="_on_killzone_body_exited"]

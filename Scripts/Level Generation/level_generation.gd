@@ -1,5 +1,7 @@
 extends Node2D
 
+var basicMonsterRes: PackedScene = preload("uid://dofox6h2j5foi")
+
 @export var tilemap : TileMapLayer
 @export var player : CharacterBody2D
 @export var roomAmt : int
@@ -8,6 +10,8 @@ extends Node2D
 @export var bg : String
 
 @onready var BG = $Parallax2D/Background1
+
+var rooms : Array[Rect2] = []
 
 const LEVEL_WIDTH = 400
 const LEVEL_HEIGHT = 70
@@ -26,8 +30,7 @@ func generate_level():
 		levelGrid.append( [] )
 		for x in LEVEL_WIDTH:
 			levelGrid[y].append( TileType.EMPTY )
-			
-	var rooms : Array[Rect2] = []
+		
 	var max_attempts = 100
 	var tries = 0
 	
@@ -83,7 +86,9 @@ func add_walls():
 				
 func create_level():
 	configure_bg()
-	place_player(generate_level())
+	generate_level()
+	place_player()
+	create_monsters()
 	add_walls()
 	render_level()
 	
@@ -114,7 +119,7 @@ func carve_corridor(from: Vector2, to: Vector2, width: int = 4):
 				if is_in_bounds(x, y):
 					levelGrid[y][x] = TileType.FLOOR
 					
-func place_player(rooms : Array[Rect2]):
+func place_player():
 	player.position = rooms.pick_random().get_center() * 16
 	
 func configure_bg():
@@ -123,3 +128,8 @@ func configure_bg():
 	
 func is_in_bounds(x: int, y: int) -> bool:
 	return x >= 0 and y >= 0 and x < LEVEL_WIDTH and y < LEVEL_HEIGHT
+	
+func create_monsters():
+	var basicMonster = basicMonsterRes.instantiate()
+	basicMonster.position = rooms.pick_random().get_center() * 16
+	add_child(basicMonster)

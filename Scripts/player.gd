@@ -177,6 +177,7 @@ func gravityget() -> float:
 # dashing
 func _on_dash_timer_timeout() -> void:
 	dashing = false
+
 func _on_dash_cooldown_timeout() -> void:
 	can_dash = true
 	
