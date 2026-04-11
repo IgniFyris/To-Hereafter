@@ -31,8 +31,9 @@ func _sort_by_nearest(area1, area2):
 	return area1_dist < area2_dist
 	
 func _on_interact_range_area_entered(area: Area2D) -> void:
-	current_interacions.push_back(area)
-
+	if area is Interactable:
+		current_interacions.push_back(area)
 
 func _on_interact_range_area_exited(area: Area2D) -> void:
-	current_interacions.erase(area)
+	if area is Interactable:
+		current_interacions.erase(area)

@@ -118,7 +118,7 @@ radius = 22.0
 height = 68.0
 
 [node name="Player" type="CharacterBody2D" unique_id=572479440]
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_gntrk")
 jump_time_to_descent = 0.15
 
@@ -157,7 +157,7 @@ visible = false
 scale = Vector2(0.325, 0.32500014)
 sprite_frames = SubResource("SpriteFrames_1iu4k")
 
-[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=801466016]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=801466016]
 shape = SubResource("CapsuleShape2D_qbkls")
 
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=816332861]
