@@ -1,61 +1,96 @@
 extends CharacterBody2D
+class_name BasicMonster
 
 var arrowsContainer: PackedScene = preload("uid://hedujnigma4w")
 @export var arrowConYPos : float
+@onready var Sprite = $Sprite2D
 
 var arrowPicRes = load("uid://cokccv0240pwm")
 var arrowPicResH = load("uid://drk7gt8ct3hpf")
 
+#Arrow Configuration
 var arrowCon
 var arrowRots
 var keys = []
 var input = 1
 
-var previousInput
+#Movement Configuration
+const GRAVITY : float = 300.0
+@export var speed : float = 30.0
+@onready var WallDetectionRay = $WallDetectionRay
+@onready var WallDetectionRay2 = $WallDetectionRay2
+@onready var LedgeDetectionRay = $LedgeDetectionRay
+var direction : float = 1.0
 
-var current_input_buffer = []
+var collided
+
 
 func _ready() -> void:
 	set_process_input(false)
+
+func _physics_process(delta: float) -> void:
+	movement(delta)
+	update_direction()
+	update_animation()
+	
+	move_and_slide()
+	
+func movement(delta : float):
+	velocity.y += GRAVITY * delta
+	velocity.x = speed * direction
+	
+func update_animation():
+	Sprite.flip_h = false if direction == 1.0 else true
+
+func update_direction():
+	if not WallDetectionRay.is_colliding() and LedgeDetectionRay.is_colliding() and not WallDetectionRay2.is_colliding():
+		return
+		
+	direction *= -1.0
+	
+	var WallDirectionRayPos : Vector2 = Vector2(WallDetectionRay.target_position.x * -1, WallDetectionRay.target_position.y)
+	
+	WallDetectionRay.target_position = WallDirectionRayPos
+	
+	var WallDirectionRay2Pos : Vector2 = Vector2(WallDetectionRay2.target_position.x * -1, WallDetectionRay2.target_position.y)
+	
+	WallDetectionRay2.target_position = WallDirectionRay2Pos
+	
+	collided = LedgeDetectionRay.get_collider()
+	if collided is not BasicMonster:
+		var LedgeDirectionRayPos : Vector2 = Vector2(LedgeDetectionRay.position.x * -1, LedgeDetectionRay.position.y)
+		
+		LedgeDetectionRay.position = LedgeDirectionRayPos
 	
 func _input(event: InputEvent) -> void:
 	if input == 1:
 		if event is InputEventKey and event.pressed:
-			print(OS.get_keycode_string(event.keycode))
 			if not event.echo:
 				if OS.get_keycode_string(event.keycode) == keys[0]:
-					print("first one right")
 					arrowCon.arrow1Container.get_child(0).texture_normal = arrowPicResH
 					input = 2
 				else:
-					print("apparently first input failed")
 					arrowCon.arrow1Container.get_child(0).texture_normal = arrowPicRes
 					arrowCon.arrow2Container.get_child(0).texture_normal = arrowPicRes
 					arrowCon.arrow3Container.get_child(0).texture_normal = arrowPicRes
-					
 	elif  input == 2:
 		if event is InputEventKey and event.pressed:
 			if not event.echo:
 				if OS.get_keycode_string(event.keycode) == keys[1]:
-					print("second one right")
 					arrowCon.arrow2Container.get_child(0).texture_normal = arrowPicResH
 					input = 3
 				else:
-					print("apparently second input failed")
 					arrowCon.arrow1Container.get_child(0).texture_normal = arrowPicRes
 					arrowCon.arrow2Container.get_child(0).texture_normal = arrowPicRes
 					arrowCon.arrow3Container.get_child(0).texture_normal = arrowPicRes
 					input = 1
-
 	elif  input == 3:
 		if event is InputEventKey and event.pressed:
 			if not event.echo:
 				if OS.get_keycode_string(event.keycode) == keys[2]:
-					print("third one right")
 					arrowCon.arrow3Container.get_child(0).texture_normal = arrowPicResH
 					kill_self()
 				else:
-					print("apparently third input failed")
 					arrowCon.arrow1Container.get_child(0).texture_normal = arrowPicRes
 					arrowCon.arrow2Container.get_child(0).texture_normal = arrowPicRes
 					arrowCon.arrow3Container.get_child(0).texture_normal = arrowPicRes
@@ -80,9 +115,7 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 				keys.append("Up")
 				
 		input = 1
-		
-		print(arrowRots)
-		print(keys)
+
 		set_process_input(true)
 
 func _on_killzone_body_exited(body: Node2D) -> void:
@@ -90,10 +123,12 @@ func _on_killzone_body_exited(body: Node2D) -> void:
 		Engine.time_scale = 1
 		if arrowCon:
 			arrowCon.queue_free()
-		print(arrowRots)
-		print(keys)
 		keys.clear()
 		set_process_input(false)
 
 func kill_self():
 	self.queue_free()
+
+func _on_other_mons_checker_body_entered(body: Node2D) -> void:
+	if body is BasicMonster and not self:
+		kill_self()

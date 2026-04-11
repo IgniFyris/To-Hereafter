@@ -4,16 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://vln3mcigi8i3" path="res://Assets/Level Essentials/Monsters/BasicMonster.png" id="1_g4pt1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5js1u"]
-radius = 7.0
+radius = 9.0
 height = 40.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5js1u"]
 radius = 43.011627
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nc5b2"]
+height = 42.0
+
 [node name="BasicMonster" type="CharacterBody2D" unique_id=1092893214]
 collision_layer = 3
 script = ExtResource("1_5js1u")
 arrowConYPos = -30.41
+speed = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=95598111]
 shape = SubResource("CapsuleShape2D_5js1u")
@@ -32,5 +36,24 @@ collision_layer = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=146879749]
 shape = SubResource("CircleShape2D_5js1u")
 
+[node name="WallDetectionRay" type="RayCast2D" parent="." unique_id=162703566]
+position = Vector2(0, -11)
+target_position = Vector2(14, 0)
+
+[node name="WallDetectionRay2" type="RayCast2D" parent="." unique_id=1047607047]
+position = Vector2(0, 10)
+target_position = Vector2(14, 0)
+
+[node name="LedgeDetectionRay" type="RayCast2D" parent="." unique_id=1336083656]
+position = Vector2(9, 13)
+target_position = Vector2(0, 17)
+
+[node name="OtherMonsChecker" type="Area2D" parent="." unique_id=1709594977]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OtherMonsChecker" unique_id=559376805]
+shape = SubResource("CapsuleShape2D_nc5b2")
+
 [connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
 [connection signal="body_exited" from="Killzone" to="." method="_on_killzone_body_exited"]
+[connection signal="body_entered" from="OtherMonsChecker" to="." method="_on_other_mons_checker_body_entered"]

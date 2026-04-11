@@ -11,7 +11,7 @@ var arrow3
 var arrowRots = []
 
 func _ready() -> void:
-	Engine.time_scale = 0.05
+	Engine.time_scale = 0.02
 	create_arrows()
 
 func delete_arrows():
@@ -31,4 +31,5 @@ func create_arrows():
 	
 func get_rots():
 	for i in self.get_children():
-		arrowRots.append(i.get_child(0).rotation_degrees)
+		if i is not AnimationPlayer:
+			arrowRots.append(i.get_child(0).rotation_degrees)

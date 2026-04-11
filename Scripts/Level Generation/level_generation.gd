@@ -7,9 +7,12 @@ var basicMonsterRes: PackedScene = preload("uid://dofox6h2j5foi")
 @export var roomAmt : int
 @export var maxRoomWidthRange : int
 @export var maxRoomHeightRange : int
+@export var minRoomWidthRange : int
+@export var minRoomHeightRange : int
 @export var bg = load("uid://vhge4lgu8juk")
 
 @onready var BG = $Parallax2D/Background1
+@onready var MonsSpawnTimer = $MonsterSpawn
 
 var rooms : Array[Rect2] = []
 
@@ -19,8 +22,15 @@ const LEVEL_HEIGHT = 70
 enum TileType { EMPTY, FLOOR, WALL }
 
 var levelGrid = []
+var monsters = 0
+var randomRoom
+
+var playerRoom
+
+var spawned_monster_tiles : Array[Vector2i] = []
 
 func _ready():
+	spawned_monster_tiles.clear()
 	create_level()
 
 func generate_level():
@@ -35,8 +45,8 @@ func generate_level():
 	var tries = 0
 	
 	while rooms.size() < roomAmt and tries < max_attempts:
-		var w =  randi_range(30, maxRoomWidthRange)
-		var h =  randi_range(15, maxRoomHeightRange)
+		var w =  randi_range(minRoomWidthRange, maxRoomWidthRange)
+		var h =  randi_range(minRoomHeightRange, maxRoomHeightRange)
 		var x =  randi_range(1, LEVEL_WIDTH - w - 1)
 		var y =  randi_range(1, LEVEL_HEIGHT - h - 1)
 		var room = Rect2(x, y, w, h)
@@ -85,12 +95,22 @@ func add_walls():
 								levelGrid[ny][nx] = TileType.WALL
 				
 func create_level():
+	var amt = 0
+	
 	configure_bg()
 	generate_level()
 	place_player()
-	create_monsters()
 	add_walls()
 	render_level()
+	
+	while not player.is_on_floor():
+		await get_tree().physics_frame
+		if player.is_on_floor():
+			break
+			
+	while amt < 15:
+		create_monsters()
+		amt += 1
 	
 func carve_corridor(from: Vector2, to: Vector2, width: int = 4):
 	var min_width = -width/2
@@ -120,7 +140,8 @@ func carve_corridor(from: Vector2, to: Vector2, width: int = 4):
 					levelGrid[y][x] = TileType.FLOOR
 					
 func place_player():
-	player.position = rooms.pick_random().get_center() * 16
+	playerRoom = rooms.pick_random()
+	player.position = playerRoom.get_center() * 16
 	
 func configure_bg():
 	BG.texture = bg
@@ -130,6 +151,46 @@ func is_in_bounds(x: int, y: int) -> bool:
 	return x >= 0 and y >= 0 and x < LEVEL_WIDTH and y < LEVEL_HEIGHT
 	
 func create_monsters():
-	var basicMonster = basicMonsterRes.instantiate()
-	basicMonster.position = rooms.pick_random().get_center() * 16
-	add_child(basicMonster)
+	const MIN_DISTANCE_TILES = 2.0  
+	const MAX_ATTEMPTS = 50
+	
+	var attempts = 0
+	var placed = false
+	
+	while not placed and attempts < MAX_ATTEMPTS:
+		randomRoom = rooms.pick_random()
+		
+		if randomRoom != playerRoom:
+			var tile_x = randf_range(randomRoom.position.x, randomRoom.position.x + randomRoom.size.x)
+			var tile_y = randf_range(randomRoom.position.y, randomRoom.position.y + randomRoom.size.y)
+			var desigTile = Vector2i(floor(tile_x), floor(tile_y))
+			
+			var too_close = false
+			for other_tile in spawned_monster_tiles:
+				if other_tile.distance_to(desigTile) < MIN_DISTANCE_TILES:
+					too_close = true
+					break
+			
+			var world_pos = Vector2(tile_x * 16, tile_y * 16)
+			if not too_close and is_in_any_position_in_any_room(world_pos):
+				var basicMonster = basicMonsterRes.instantiate()
+				basicMonster.position = world_pos
+				add_child(basicMonster)
+				spawned_monster_tiles.append(desigTile)
+				monsters += 1
+				placed = true
+		
+		attempts += 1
+
+func _on_monster_spawn_timeout() -> void:
+	if monsters < 30:
+		create_monsters()
+	else:
+		spawned_monster_tiles.clear()
+
+func is_in_any_position_in_any_room(world_pos: Vector2) -> bool:
+	for room in rooms:
+		var pixel_room = Rect2(room.position * 16, room.size * 16)
+		if pixel_room.has_point(world_pos):
+			return true
+	return false
