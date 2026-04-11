@@ -28,6 +28,7 @@ buses/default_bus_layout="uid://bej6pyao0oo1e"
 SceneLoader="*uid://qqe1qdyr4bd7"
 Music="*uid://cur8tm1xt2km1"
 DialogueManager="*uid://c3rodes2l3gxb"
+GlobalVars="*uid://wawkt0xuouj6"
 
 [dialogue_manager]
 

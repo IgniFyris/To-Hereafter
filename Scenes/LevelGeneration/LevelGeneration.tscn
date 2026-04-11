@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://2risb3kak1sq" path="res://Scripts/Level Generation/level_generation.gd" id="1_75ddt"]
 [ext_resource type="Texture2D" uid="uid://lbqtmhcbmexf" path="res://Assets/Tilesets/Tileset.png" id="1_bosrh"]
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="3_75ddt"]
-[ext_resource type="PackedScene" uid="uid://edgm8i7psjbq" path="res://Scenes/LevelGeneration/sanity_bar.tscn" id="4_usupu"]
+[ext_resource type="PackedScene" uid="uid://edgm8i7psjbq" path="res://Scenes/LevelGeneration/SanityBar.tscn" id="4_usupu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11o54"]
 texture = ExtResource("1_bosrh")
@@ -38,7 +38,7 @@ dash_speed = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1481562400]
 process_mode = 1
-zoom = Vector2(2.28, 2.28)
+zoom = Vector2(0.625, 0.625)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=318580028]
 
