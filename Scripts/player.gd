@@ -22,11 +22,6 @@ var direction = 0
 
 const FLAP_SPEED : int = 400
 
-var memoryAmt = 0
-
-func _ready() -> void:
-	memoryAmt = 0
-
 func _physics_process(delta):
 	#👻REGULAR FORM
 	if $"Radial Menu/UI".form == "None" or $"Radial Menu/UI".form == "none":
