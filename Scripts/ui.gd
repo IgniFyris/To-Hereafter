@@ -14,7 +14,6 @@ func _process(_delta):
 		@warning_ignore("shadowed_variable_base_class")
 		var transform = $SelectionWheel.Close()
 		form = transform
-		$Label.text = "Player Transformation: " + transform
 		if Engine.time_scale == 0.1:
 			Engine.time_scale = 1
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

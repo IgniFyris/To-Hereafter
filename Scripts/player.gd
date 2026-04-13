@@ -20,7 +20,7 @@ var can_dash = true
 @export var speed_multipilier = 30
 var direction = 0
 
-const FLAP_SPEED : int = 400
+@export var FLAP_SPEED : int = 400
 
 func _physics_process(delta):
 	#👻REGULAR FORM

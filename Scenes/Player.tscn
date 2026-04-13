@@ -118,7 +118,7 @@ radius = 22.0
 height = 68.0
 
 [node name="Player" type="CharacterBody2D" unique_id=572479440]
-collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_gntrk")
 jump_time_to_descent = 0.15
 
@@ -179,6 +179,7 @@ wait_time = 0.5
 [node name="Radial Menu" parent="." unique_id=1377387565 instance=ExtResource("5_nn08x")]
 
 [node name="SelectionWheel" parent="." unique_id=1740633210 instance=ExtResource("6_52ee3")]
+visible = false
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0

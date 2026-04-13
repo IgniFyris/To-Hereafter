@@ -1,15 +1,17 @@
 extends Node2D
 
 var basicMonsterRes: PackedScene = preload("uid://dofox6h2j5foi")
+var memoryFragRes: PackedScene = preload("uid://r3om2v7ntmx4")
 
 @export var tilemap : TileMapLayer
 @export var player : CharacterBody2D
-@export var roomAmt : int
-@export var maxRoomWidthRange : int
-@export var maxRoomHeightRange : int
-@export var minRoomWidthRange : int
-@export var minRoomHeightRange : int
-@export var bg = load("uid://vhge4lgu8juk")
+@export var roomAmt : int = 50
+@export var maxRoomWidthRange : int = 40
+@export var maxRoomHeightRange : int = 30
+@export var minRoomWidthRange : int = 25
+@export var minRoomHeightRange : int = 15
+@export var Canvaslayer : CanvasLayer
+var bg = load("uid://vhge4lgu8juk")
 
 @onready var playerCam = $Player/Camera2D
 @onready var BG = $Parallax2D/Background1
@@ -32,9 +34,11 @@ var playerRoom
 var spawned_monster_tiles : Array[Vector2i] = []
 
 var UIDString
+var memoryRooms = []
 
 func _ready():
-	create_tween().set_ignore_time_scale().tween_property(SanityBar, "modulate:a", 1, 2).set_delay(1)
+	GlobalVars.current_scene = "LevelGeneration"
+	GlobalVars.memoryAmt = 0
 	spawned_monster_tiles.clear()
 	var UID = ResourceLoader.get_resource_uid(get_tree().current_scene.scene_file_path)
 	UIDString = ResourceUID.id_to_text(UID)
@@ -104,6 +108,7 @@ func add_walls():
 				
 func create_level():
 	var amt = 0
+	var memAmt = 0
 	
 	configure_bg()
 	generate_level()
@@ -119,6 +124,10 @@ func create_level():
 	while amt < 15:
 		create_monsters()
 		amt += 1
+		
+	while memAmt < 4:
+		create_memories()
+		memAmt += 1
 	
 func carve_corridor(from: Vector2, to: Vector2, width: int = 4):
 	var min_width = -width/2
@@ -215,3 +224,21 @@ func _on_sanity_bar_value_changed(value: float) -> void:
 	if value < 0 or value == 0:
 		create_tween().set_ignore_time_scale().tween_property(SanityBar, "modulate:a", 0, 1)
 		SceneLoader.load_scene(UIDString, 1)
+		
+func create_memories():
+	var memoryRoom = rooms.pick_random().get_center() * 16
+	var same = false
+	if memoryRooms.size() > 0 and memoryRoom != playerRoom.get_center() * 16:
+		for i in memoryRooms:
+			if memoryRoom != i:
+				pass
+			elif memoryRoom == i:
+				same = true
+	
+	if same == false:
+		var memoryFrag = memoryFragRes.instantiate()
+		memoryFrag.position = memoryRoom
+		add_child(memoryFrag)
+		memoryRooms.append(memoryRoom)
+	else:
+		create_memories()
