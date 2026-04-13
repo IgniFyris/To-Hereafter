@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch1gyevi1bujq"]
 
 [ext_resource type="Script" uid="uid://dfvsmfr5pl2hd" path="res://Scripts/Angel/info_ui.gd" id="1_lfib1"]
+[ext_resource type="Texture2D" uid="uid://cm36olysdoluf" path="res://Assets/Buffer Area/close-x.png" id="2_3uvel"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3uvel"]
 
@@ -197,9 +198,20 @@ This is Placeholder text testing text wrapping"
 label_settings = SubResource("LabelSettings_3uvel")
 autowrap_mode = 2
 
+[node name="Exit" type="Button" parent="." unique_id=1459364253]
+layout_mode = 0
+offset_left = 527.0
+offset_top = -247.00002
+offset_right = 1335.0
+offset_bottom = 561.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("2_3uvel")
+icon_alignment = 1
+
 [connection signal="pressed" from="HBoxContainer/Left/ScrollContainer/VBoxContainer/GridContainer/Monster 1" to="." method="_on_monster_1_pressed"]
 [connection signal="toggled" from="HBoxContainer/Left/ScrollContainer/VBoxContainer/GridContainer/Monster 1" to="." method="_on_monster_1_toggled"]
 [connection signal="pressed" from="HBoxContainer/Left/ScrollContainer/VBoxContainer/GridContainer/Monster 2" to="." method="_on_monster_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/Left/ScrollContainer/VBoxContainer/GridContainer/Monster 3" to="." method="_on_monster_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/Left/ScrollContainer/VBoxContainer/GridContainer/Monster 4" to="." method="_on_monster_4_pressed"]
 [connection signal="pressed" from="HBoxContainer/Left/ScrollContainer/VBoxContainer/GridContainer/Monster 5" to="." method="_on_monster_5_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

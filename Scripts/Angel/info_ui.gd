@@ -19,3 +19,9 @@ func _on_monster_4_pressed() -> void:
 
 func _on_monster_5_pressed() -> void:
 	show_only("5 Info")
+
+
+func _on_exit_pressed() -> void:
+	$".".hide()
+	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

@@ -53,6 +53,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 9.0
 
 [node name="Info" parent="Player" unique_id=417360930 instance=ExtResource("4_s32o1")]
+visible = false
 
 [node name="Map" type="Node2D" parent="." unique_id=670758794]
 position = Vector2(655, 769)
