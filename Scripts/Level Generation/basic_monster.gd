@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name BasicMonster
+class_name BasicMonsterMem
 
 signal player_inside
 signal player_outside
@@ -60,7 +60,7 @@ func update_direction():
 	WallDetectionRay2.target_position = WallDirectionRay2Pos
 	
 	collided = LedgeDetectionRay.get_collider()
-	if collided is not BasicMonster:
+	if collided is not BasicMonsterMem:
 		var LedgeDirectionRayPos : Vector2 = Vector2(LedgeDetectionRay.position.x * -1, LedgeDetectionRay.position.y)
 		
 		LedgeDetectionRay.position = LedgeDirectionRayPos
@@ -101,6 +101,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body is Player:
+		print("enter")
 		player_inside.emit()
 		arrowCon = arrowsContainer.instantiate()
 		add_child(arrowCon)
@@ -132,12 +133,8 @@ func _on_killzone_body_exited(body: Node2D) -> void:
 		set_process_input(false)
 
 func kill_self():
-	if get_parent().SanityBar.value + 20 > 500:
-		get_parent().SanityBar.value = get_parent().SanityBar.max_value
-	else:
-		get_parent().SanityBar.value += 20
 	self.queue_free()
 
 func _on_other_mons_checker_body_entered(body: Node2D) -> void:
-	if body is BasicMonster and not self:
+	if body is BasicMonsterMem and not self:
 		kill_self()

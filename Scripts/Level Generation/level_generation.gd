@@ -5,11 +5,12 @@ var memoryFragRes: PackedScene = preload("uid://r3om2v7ntmx4")
 
 @export var tilemap : TileMapLayer
 @export var player : CharacterBody2D
-@export var roomAmt : int
-@export var maxRoomWidthRange : int
-@export var maxRoomHeightRange : int
-@export var minRoomWidthRange : int
-@export var minRoomHeightRange : int
+@export var roomAmt : int = 50
+@export var maxRoomWidthRange : int = 40
+@export var maxRoomHeightRange : int = 30
+@export var minRoomWidthRange : int = 25
+@export var minRoomHeightRange : int = 15
+@export var Canvaslayer : CanvasLayer
 var bg = load("uid://vhge4lgu8juk")
 
 @onready var playerCam = $Player/Camera2D
@@ -36,8 +37,8 @@ var UIDString
 var memoryRooms = []
 
 func _ready():
-	GlobalVars.current_scene == "LevelGeneration"
-	create_tween().set_ignore_time_scale().tween_property(SanityBar, "modulate:a", 1, 2).set_delay(1)
+	GlobalVars.current_scene = "LevelGeneration"
+	GlobalVars.memoryAmt = 0
 	spawned_monster_tiles.clear()
 	var UID = ResourceLoader.get_resource_uid(get_tree().current_scene.scene_file_path)
 	UIDString = ResourceUID.id_to_text(UID)

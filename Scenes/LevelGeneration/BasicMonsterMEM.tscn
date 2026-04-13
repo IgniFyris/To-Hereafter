@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dofox6h2j5foi"]
+[gd_scene format=3 uid="uid://d1bpbnoasvf7p"]
 
-[ext_resource type="Script" uid="uid://uv4kmgfadu1d" path="res://Scripts/Level Generation/basic_monster.gd" id="1_5js1u"]
-[ext_resource type="Texture2D" uid="uid://vln3mcigi8i3" path="res://Assets/Level Essentials/Monsters/BasicMonster.png" id="1_g4pt1"]
+[ext_resource type="Script" uid="uid://uv4kmgfadu1d" path="res://Scripts/Level Generation/basic_monster.gd" id="1_wb6ca"]
+[ext_resource type="Texture2D" uid="uid://vln3mcigi8i3" path="res://Assets/Level Essentials/Monsters/BasicMonster.png" id="2_g0nrk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5js1u"]
 radius = 9.0
@@ -13,9 +13,10 @@ size = Vector2(46, 51)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nc5b2"]
 height = 42.0
 
-[node name="BasicMonster2" type="CharacterBody2D" unique_id=1092893214]
-collision_mask = 9
-script = ExtResource("1_5js1u")
+[node name="BasicMonsterMEM" type="CharacterBody2D" unique_id=1092893214]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_wb6ca")
 arrowConYPos = -30.41
 speed = 100.0
 
@@ -25,10 +26,11 @@ shape = SubResource("CapsuleShape2D_5js1u")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320446185]
 z_index = -1
 scale = Vector2(0.08759123, 0.087591305)
-texture = ExtResource("1_g4pt1")
+texture = ExtResource("2_g0nrk")
 
 [node name="Killzone" type="Area2D" parent="." unique_id=1252238070]
-collision_layer = 3
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=146879749]
 position = Vector2(0, -6.5)
@@ -37,17 +39,21 @@ shape = SubResource("RectangleShape2D_5js1u")
 [node name="WallDetectionRay" type="RayCast2D" parent="." unique_id=162703566]
 position = Vector2(0, -11)
 target_position = Vector2(14, 0)
+collision_mask = 7
 
 [node name="WallDetectionRay2" type="RayCast2D" parent="." unique_id=1047607047]
 position = Vector2(0, 10)
 target_position = Vector2(14, 0)
+collision_mask = 7
 
 [node name="LedgeDetectionRay" type="RayCast2D" parent="." unique_id=1336083656]
 position = Vector2(9, 13)
 target_position = Vector2(0, 17)
+collision_mask = 7
 
 [node name="OtherMonsChecker" type="Area2D" parent="." unique_id=1709594977]
-collision_layer = 3
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OtherMonsChecker" unique_id=559376805]
 shape = SubResource("CapsuleShape2D_nc5b2")

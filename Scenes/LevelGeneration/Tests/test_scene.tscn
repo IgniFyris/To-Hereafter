@@ -142,7 +142,8 @@ texture = ExtResource("2_n7kk5")
 14:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_6l0ye"]
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 6
+physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_3r3a1")
 
 [node name="TestScene" type="Node2D" unique_id=1294940681]
@@ -160,12 +161,17 @@ scale = Vector2(0.4574074, 0.4574074)
 texture = ExtResource("3_yrrnp")
 
 [node name="Player" parent="." unique_id=572479440 instance=ExtResource("4_ypr3k")]
-position = Vector2(89, 163)
+position = Vector2(643, 669)
 scale = Vector2(0.41, 0.41)
-dash_speed = 30.0
+collision_layer = 6
+collision_mask = 6
+speed = 10.0
+jump_height = 20.0
+jump_time_to_peak = 0.15
+jump_time_to_descent = 0.1
+dash_speed = 20.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=112133322]
-enabled = false
 zoom = Vector2(2.825, 2.825)
 limit_left = 0
 limit_top = -2
@@ -174,5 +180,29 @@ limit_bottom = 724
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=718844837]
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=125074275]
 position = Vector2(637, 363)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1120891681]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+offset_right = 1275.0
+offset_bottom = 719.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="MemoryBG" type="ColorRect" parent="." unique_id=1455093782]
+z_index = -1
+offset_left = 191.00006
+offset_top = 114.0
+offset_right = 1084.0
+offset_bottom = 605.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=484308703]
+z_index = -2
+offset_right = 1273.0
+offset_bottom = 699.0
+metadata/_edit_lock_ = true
