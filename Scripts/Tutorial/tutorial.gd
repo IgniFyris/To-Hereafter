@@ -28,6 +28,10 @@ func _ready() -> void:
 	
 	tween = create_tween().tween_property(LMove, "modulate:a", 1, 1)
 	GlobalVars.movement_jump = true
+	MoveJump.disabled = false
+	
+	await DialogueManager.dialogue_ended
+	
 	MoveJump.disabled = true
 	
 func _on_form_body_entered(body: Node2D) -> void:

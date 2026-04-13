@@ -96,4 +96,4 @@ func personality_tally():
 	await DialogueManager.dialogue_ended
 	
 	create_tween().tween_property(Music.PersonalityTest, "volume_db", -90.0, 3)
-	SceneLoader.load_scene("uid://c6yf5n1fbfsm8", 1)
+	SceneLoader.load_scene("uid://q3pkgbn5vxyj", 1)

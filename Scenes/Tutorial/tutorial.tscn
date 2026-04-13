@@ -175,6 +175,9 @@ tile_set = SubResource("TileSet_6w3qm")
 position = Vector2(70.00001, 521)
 scale = Vector2(0.475, 0.475)
 collision_layer = 3
+speed = 15.0
+jump_height = 35.0
+dash_speed = 30.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1326116374]
 zoom = Vector2(2.965, 2.965)
@@ -202,7 +205,6 @@ physics_material_override = SubResource("PhysicsMaterial_n1m62")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/Movement_and_Jump" unique_id=153649119]
 position = Vector2(1007, 519.5)
 shape = SubResource("RectangleShape2D_cdp5x")
-disabled = true
 
 [node name="Dash" type="StaticBody2D" parent="Barriers" unique_id=1641333669]
 physics_material_override = SubResource("PhysicsMaterial_6w3qm")
