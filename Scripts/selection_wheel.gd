@@ -20,8 +20,6 @@ func _ready() -> void:
 
 func Close():
 	hide()
-	print(options[selection].name)
-	print("closed")
 	
 	return options[selection].name
 

@@ -23,6 +23,7 @@ var direction = 0
 @export var FLAP_SPEED : int = 400
 
 func _physics_process(delta):
+
 	#👻REGULAR FORM
 	if $"Radial Menu/UI".form == "None" or $"Radial Menu/UI".form == "none":
 		for i in $Animations.get_children():
@@ -35,10 +36,10 @@ func _physics_process(delta):
 		velocity.y += gravityget() * delta
 
 		# Handle jump.
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("jump") and GlobalVars.movement_jump == true:
 			JumpBufferTimer.start()
 			
-		if Input.is_action_just_pressed("dash") and can_dash:
+		if Input.is_action_just_pressed("dash") and can_dash and GlobalVars.dash == true:
 			dashing = true
 			can_dash = false
 			$DashTimer.start()
@@ -49,13 +50,14 @@ func _physics_process(delta):
 
 		# Get the input direction and handle the movement/deceleration.
 		direction = Input.get_axis("move_left", "move_right")
-		if direction:
-			if dashing:
-				velocity.x = direction * dash_speed * speed_multipilier
+		if GlobalVars.movement_jump == true:
+			if direction:
+				if dashing:
+					velocity.x = direction * dash_speed * speed_multipilier
+				else:
+					velocity.x = direction * speed * speed_multipilier
 			else:
-				velocity.x = direction * speed * speed_multipilier
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed * speed_multipilier)
+				velocity.x = move_toward(velocity.x, 0, speed * speed_multipilier)
 			
 		var was_on_floor = is_on_floor()
 
@@ -92,7 +94,7 @@ func _physics_process(delta):
 			pass #flying
 	
 	#🕯️MOTH TRANSFORMATION
-	elif $"Radial Menu/UI".form == "Transform 2":
+	elif $"Radial Menu/UI".form == "Transform 2" and GlobalVars.unlocked == true:
 		for i in $Animations.get_children():
 			if i.name == "MothFormAnims":
 				i.visible = true
@@ -119,7 +121,7 @@ func _physics_process(delta):
 			pass #flying
 	
 	#🦅VULTURE TRANSFORMATION
-	elif $"Radial Menu/UI".form == "Transform 3":
+	elif $"Radial Menu/UI".form == "Transform 3" and GlobalVars.unlocked == true:
 		for i in $Animations.get_children():
 			if i.name == "VultureFormAnims":
 				i.visible = true
@@ -146,7 +148,7 @@ func _physics_process(delta):
 			pass #flying
 	
 	#🌹FLOWER TRANSFORMATION
-	elif $"Radial Menu/UI".form == "Transform 4":
+	elif $"Radial Menu/UI".form == "Transform 4" and GlobalVars.unlocked == true:
 		for i in $Animations.get_children():
 			if i.name == "FlowerFormAnims":
 				i.visible = true
@@ -156,20 +158,54 @@ func _physics_process(delta):
 		velocity.y += gravityget() * delta
 	
 	#⌛HOURGLASS TRANSFORMATION
-	elif $"Radial Menu/UI".form == "Transform 5":
+	elif $"Radial Menu/UI".form == "Transform 5" and GlobalVars.unlocked == true:
+		
 		for i in $Animations.get_children():
 			if i.name == "HourglassFormAnims":
 				i.visible = true
 			else:
 				i.visible = false
 				
-		pass
+	else:
+		for i in $Animations.get_children():
+			if i.name == "NormalFormAnims":
+				i.visible = true
+			else:
+				i.visible = false
 		
+		speed = 10
+		velocity.y += gravityget() * delta
+
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and GlobalVars.movement_jump == true:
+			JumpBufferTimer.start()
+			
+		if Input.is_action_just_pressed("dash") and can_dash and GlobalVars.dash == true:
+			dashing = true
+			can_dash = false
+			$DashTimer.start()
+			$DashCooldown.start()
+			
+		if	(is_on_floor() or not CoyoteTimer.is_stopped()) and not JumpBufferTimer.is_stopped():
+			velocity.y = jump_velocity
+
+		# Get the input direction and handle the movement/deceleration.
+		direction = Input.get_axis("move_left", "move_right")
+		if GlobalVars.movement_jump == true:
+			if direction:
+				if dashing:
+					velocity.x = direction * dash_speed * speed_multipilier
+				else:
+					velocity.x = direction * speed * speed_multipilier
+			else:
+				velocity.x = move_toward(velocity.x, 0, speed * speed_multipilier)
+			
+		var was_on_floor = is_on_floor()
+
+		move_and_slide()
 		
-	if Input.is_action_just_pressed("transformation"):
-		$SelectionWheel.show()
-	elif Input.is_action_just_released("transformation"):	
-		$SelectionWheel.Close()
+		if was_on_floor and not is_on_floor():
+			CoyoteTimer.start()
 	
 func gravityget() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity

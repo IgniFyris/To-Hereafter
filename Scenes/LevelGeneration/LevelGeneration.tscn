@@ -36,7 +36,7 @@ dash_speed = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1481562400]
 process_mode = 1
-zoom = Vector2(0.625, 0.625)
+zoom = Vector2(3.53, 3.53)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=318580028]
 
