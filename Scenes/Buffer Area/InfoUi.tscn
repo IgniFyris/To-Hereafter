@@ -5,7 +5,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3uvel"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_d7syh"]
+[sub_resource type="LabelSettings" id="LabelSettings_38i7g"]
 font_size = 55
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_8qe1v"]
@@ -24,7 +24,7 @@ size = Vector2(95, 95)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_pasqe"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_38i7g"]
+[sub_resource type="LabelSettings" id="LabelSettings_d7syh"]
 font_size = 55
 
 [sub_resource type="LabelSettings" id="LabelSettings_3uvel"]
@@ -79,10 +79,10 @@ metadata/_edit_group_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/Left" unique_id=1181309660]
+[node name="Label2" type="Label" parent="HBoxContainer/Left" unique_id=1411708057]
 layout_mode = 2
-text = "Information"
-label_settings = SubResource("LabelSettings_d7syh")
+text = "Navigation"
+label_settings = SubResource("LabelSettings_38i7g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -137,10 +137,10 @@ icon = SubResource("PlaceholderTexture2D_8qe1v")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/Right" unique_id=1411708057]
+[node name="Label" type="Label" parent="HBoxContainer/Right" unique_id=1181309660]
 layout_mode = 2
-text = "Navigation"
-label_settings = SubResource("LabelSettings_38i7g")
+text = "Information"
+label_settings = SubResource("LabelSettings_d7syh")
 horizontal_alignment = 1
 vertical_alignment = 1
 

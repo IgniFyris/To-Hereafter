@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bbvenmgj1c6y8" path="res://Scripts/buffer_area.gd" id="1_1sao5"]
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="1_dx6ns"]
 [ext_resource type="PackedScene" uid="uid://u4lkmvga7xor" path="res://Scenes/Buffer Area/UpgradeAngel.tscn" id="3_1sao5"]
-[ext_resource type="PackedScene" uid="uid://ch1gyevi1bujq" path="res://Scripts/Angel/InfoUi.tscn" id="4_s32o1"]
+[ext_resource type="PackedScene" uid="uid://bedg0cftde18n" path="res://Scenes/Buffer Area/UpgradeUI.tscn" id="4_8ekdt"]
+[ext_resource type="PackedScene" uid="uid://ch1gyevi1bujq" path="res://Scenes/Buffer Area/InfoUi.tscn" id="4_s32o1"]
 [ext_resource type="PackedScene" uid="uid://dst1hv3o188kr" path="res://Scenes/Buffer Area/ProgressAngel.tscn" id="6_8ekdt"]
 [ext_resource type="PackedScene" uid="uid://s2bxygfo6at6" path="res://Scenes/Buffer Area/InfoAngel.tscn" id="7_1m7i6"]
 
@@ -53,6 +54,9 @@ position_smoothing_enabled = true
 position_smoothing_speed = 9.0
 
 [node name="Info" parent="Player" unique_id=417360930 instance=ExtResource("4_s32o1")]
+visible = false
+
+[node name="UpgradeUI" parent="Player" unique_id=180533955 instance=ExtResource("4_8ekdt")]
 visible = false
 
 [node name="Map" type="Node2D" parent="." unique_id=670758794]

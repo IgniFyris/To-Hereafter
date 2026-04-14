@@ -9,7 +9,7 @@ func _process(_delta):
 			if Engine.time_scale == 1:
 				Engine.time_scale = 0.1
 			get_parent().get_parent().velocity.y = 0
-			get_viewport().warp_mouse(get_viewport().get_visible_rect().size / 2)
+			center_mouse()
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		elif Input.is_action_just_released("transformation"):	
 			@warning_ignore("shadowed_variable_base_class")
@@ -18,3 +18,6 @@ func _process(_delta):
 			if Engine.time_scale == 0.1:
 				Engine.time_scale = 1
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+			
+func center_mouse():
+	get_viewport().warp_mouse(get_viewport().get_visible_rect().size / 2)

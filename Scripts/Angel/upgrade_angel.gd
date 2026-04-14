@@ -4,7 +4,9 @@ extends Sprite2D
 
 func _ready() -> void:
 	interactable.interact = _on_interact
+	$"../Player/UpgradeUI".hide()
 
 func _on_interact():
-	print("opened upgrades menu")
-	
+	$"../Player/UpgradeUI".show()
+	get_tree().paused = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
