@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name BasicMonsterMem
+class_name BasicMonster
 
 signal player_inside
 signal player_outside
@@ -7,6 +7,7 @@ signal player_outside
 var arrowsContainer: PackedScene = preload("uid://hedujnigma4w")
 @export var arrowConYPos : float
 @onready var Sprite = $Sprite2D
+@onready var MonsChecker = $MonsChecker
 
 var arrowPicRes = load("uid://cokccv0240pwm")
 var arrowPicResH = load("uid://drk7gt8ct3hpf")
@@ -27,8 +28,8 @@ var direction : float = 1.0
 
 var collided
 
-
 func _ready() -> void:
+	
 	set_process_input(false)
 
 func _physics_process(delta: float) -> void:
@@ -60,7 +61,7 @@ func update_direction():
 	WallDetectionRay2.target_position = WallDirectionRay2Pos
 	
 	collided = LedgeDetectionRay.get_collider()
-	if collided is not BasicMonsterMem:
+	if collided is not BasicMonster:
 		var LedgeDirectionRayPos : Vector2 = Vector2(LedgeDetectionRay.position.x * -1, LedgeDetectionRay.position.y)
 		
 		LedgeDetectionRay.position = LedgeDirectionRayPos
@@ -133,8 +134,16 @@ func _on_killzone_body_exited(body: Node2D) -> void:
 		set_process_input(false)
 
 func kill_self():
+	if get_parent().SanityBar.value + 40 > 500:
+		get_parent().SanityBar.value = 500
+	elif get_parent().SanityBar.value + 40 < 500:
+		get_parent().SanityBar.value += 40 
 	self.queue_free()
 
 func _on_other_mons_checker_body_entered(body: Node2D) -> void:
-	if body is BasicMonsterMem and not self:
-		kill_self()
+	if body is BasicMonster and not self:
+		self.queue_free()
+
+func _on_mons_checker_body_entered(body: Node2D) -> void:
+	if body is BasicMonster:
+		self.queue_free()

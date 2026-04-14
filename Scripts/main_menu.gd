@@ -8,6 +8,11 @@ var height
 func _ready() -> void:
 	width = get_viewport_rect().size.x
 	height = get_viewport_rect().size.y
+	
+	# TutorialVars
+	GlobalVars.movement_jump = false
+	GlobalVars.dash = false
+	GlobalVars.form = false
 
 func _on_begin_pressed() -> void:
 	SceneLoader.load_scene("uid://bbxwnl4ctuot6", 1.5)

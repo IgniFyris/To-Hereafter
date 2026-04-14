@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ure4x7qk3vah"
+path="res://.godot/imported/Soul2.dialogue-5b2bdef71c0879d42523fdd702bf5444.tres"
+
+[deps]
+
+source_file="res://Dialogue/Soul2.dialogue"
+dest_files=["res://.godot/imported/Soul2.dialogue-5b2bdef71c0879d42523fdd702bf5444.tres"]
+
+[params]
+
+defaults=true

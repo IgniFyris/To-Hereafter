@@ -3,6 +3,9 @@ extends Node2D
 var basicMonsterRes: PackedScene = preload("uid://dofox6h2j5foi")
 var memoryFragRes: PackedScene = preload("uid://r3om2v7ntmx4")
 
+var balloon = load("uid://b4vdtsl8wg12c")
+var dialogue = load("uid://ure4x7qk3vah")
+
 @export var tilemap : TileMapLayer
 @export var player : CharacterBody2D
 @export var roomAmt : int = 50
@@ -20,7 +23,7 @@ var bg = load("uid://vhge4lgu8juk")
 
 var rooms : Array[Rect2] = []
 
-const LEVEL_WIDTH = 400
+const LEVEL_WIDTH = 200
 const LEVEL_HEIGHT = 70
 
 enum TileType { EMPTY, FLOOR, WALL }
@@ -37,7 +40,7 @@ var UIDString
 var memoryRooms = []
 
 func _ready():
-	GlobalVars.current_scene = "LevelGeneration"
+	GlobalVars.current_scene = "Soul2"
 	GlobalVars.memoryAmt = 0
 	spawned_monster_tiles.clear()
 	var UID = ResourceLoader.get_resource_uid(get_tree().current_scene.scene_file_path)
@@ -121,9 +124,13 @@ func create_level():
 		if player.is_on_floor():
 			break
 			
-	while amt < 15:
+	while amt < 12:
 		create_monsters()
 		amt += 1
+		
+	DialogueManager.show_dialogue_balloon_scene(balloon, dialogue, "start")
+	
+	await DialogueManager.dialogue_ended
 		
 	while memAmt < 4:
 		create_memories()
