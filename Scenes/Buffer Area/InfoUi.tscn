@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ch1gyevi1bujq"]
+[gd_scene format=3 uid="uid://bniu5qnc6uy1u"]
 
 [ext_resource type="Script" uid="uid://dfvsmfr5pl2hd" path="res://Scripts/Angel/info_ui.gd" id="1_lfib1"]
 [ext_resource type="Texture2D" uid="uid://cm36olysdoluf" path="res://Assets/Buffer Area/close-x.png" id="2_3uvel"]

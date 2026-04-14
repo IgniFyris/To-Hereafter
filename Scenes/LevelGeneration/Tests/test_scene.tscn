@@ -161,7 +161,7 @@ scale = Vector2(0.4574074, 0.4574074)
 texture = ExtResource("3_yrrnp")
 
 [node name="Player" parent="." unique_id=572479440 instance=ExtResource("4_ypr3k")]
-position = Vector2(643, 669)
+position = Vector2(79, 66)
 scale = Vector2(0.41, 0.41)
 collision_layer = 6
 collision_mask = 6
@@ -170,6 +170,7 @@ jump_height = 20.0
 jump_time_to_peak = 0.15
 jump_time_to_descent = 0.1
 dash_speed = 20.0
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=112133322]
 zoom = Vector2(2.825, 2.825)
@@ -206,3 +207,9 @@ z_index = -2
 offset_right = 1273.0
 offset_bottom = 699.0
 metadata/_edit_lock_ = true
+
+[node name="MonsterSpawn" type="Timer" parent="." unique_id=760123096]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="MonsterSpawn" to="." method="_on_monster_spawn_timeout"]

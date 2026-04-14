@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bedg0cftde18n"]
+[gd_scene format=3 uid="uid://b83j6nqvp4al0"]
 
-[ext_resource type="Script" uid="uid://q0yds7lxcifn" path="res://Scripts/Angel/upgrade_ui.gd" id="1_jorvw"]
-[ext_resource type="PackedScene" uid="uid://cj3l71mqjxobn" path="res://Scenes/Buffer Area/control.tscn" id="2_x01ko"]
+[ext_resource type="Script" path="res://Scripts/Angel/upgrade_ui.gd" id="1_jorvw"]
+[ext_resource type="PackedScene" path="res://Scenes/Buffer Area/control.tscn" id="2_x01ko"]
 [ext_resource type="Texture2D" uid="uid://cm36olysdoluf" path="res://Assets/Buffer Area/close-x.png" id="3_od1j0"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_40m8m"]
