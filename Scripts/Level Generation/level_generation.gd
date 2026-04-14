@@ -94,8 +94,8 @@ func render_level():
 			var tile = levelGrid[y][x]
 			
 			match tile:
-				TileType.FLOOR: tilemap.set_cell(Vector2i(x, y), 0, Vector2i(9,6))
-				TileType.WALL: tilemap.set_cell(Vector2i(x, y), 0, Vector2i(7,6))
+				TileType.FLOOR: tilemap.set_cell(Vector2i(x, y), 0, Vector2i(randi_range(0,2),4))
+				TileType.WALL: tilemap.set_cell(Vector2i(x, y), 0, Vector2i(randi_range(0,2),5))
 
 func add_walls():
 	for y in range(LEVEL_HEIGHT):
@@ -124,10 +124,13 @@ func create_level():
 		if player.is_on_floor():
 			break
 			
+	await get_tree().create_timer(3.0).timeout
+	
 	while amt < 12:
 		create_monsters()
 		amt += 1
 		
+	await get_tree().create_timer(3.0).timeout
 	DialogueManager.show_dialogue_balloon_scene(balloon, dialogue, "start")
 	
 	await DialogueManager.dialogue_ended

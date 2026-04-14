@@ -8,6 +8,7 @@ var arrowsContainer: PackedScene = preload("uid://hedujnigma4w")
 @export var arrowConYPos : float
 @onready var Sprite = $Sprite2D
 @onready var MonsChecker = $MonsChecker
+@onready var KillZone = $Killzone
 
 var arrowPicRes = load("uid://cokccv0240pwm")
 var arrowPicResH = load("uid://drk7gt8ct3hpf")

@@ -47,3 +47,4 @@ func mem_finished():
 	get_tree().paused = false
 	get_parent().get_parent().get_parent().playerCam.enabled = true
 	queue_free()
+	

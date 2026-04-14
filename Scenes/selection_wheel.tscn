@@ -2,49 +2,44 @@
 
 [ext_resource type="Script" uid="uid://dnclohduqv5" path="res://Scripts/selection_wheel.gd" id="1_w8kca"]
 [ext_resource type="Script" uid="uid://4mf04m051r6i" path="res://Scripts/wheel_options.gd" id="2_5eg7p"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5eg7p"]
+[ext_resource type="Texture2D" uid="uid://crjtco1kdjk7" path="res://Assets/Selection Wheel/Normal.png" id="3_hux7u"]
+[ext_resource type="Texture2D" uid="uid://cyccbfr1h8rh1" path="res://Assets/Selection Wheel/Lock.png" id="3_l5p0e"]
+[ext_resource type="Texture2D" uid="uid://c636q5jyujsul" path="res://Assets/Selection Wheel/Crow.png" id="4_ull34"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5p0e"]
-atlas = SubResource("PlaceholderTexture2D_5eg7p")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("3_hux7u")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("2_5eg7p")
 name = "None"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a61fs"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hux7u"]
-atlas = SubResource("PlaceholderTexture2D_a61fs")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("4_ull34")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("2_5eg7p")
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ull34"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nwf0m"]
-atlas = SubResource("PlaceholderTexture2D_ull34")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ull34"]
+atlas = ExtResource("3_l5p0e")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("2_5eg7p")
 metadata/_custom_type_script = "uid://4mf04m051r6i"
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lvtcq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eg7p"]
-atlas = SubResource("PlaceholderTexture2D_lvtcq")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("3_l5p0e")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("2_5eg7p")
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a61fs"]
-atlas = SubResource("PlaceholderTexture2D_lvtcq")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("3_l5p0e")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("2_5eg7p")
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7abba"]
-atlas = SubResource("PlaceholderTexture2D_lvtcq")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("3_l5p0e")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("2_5eg7p")
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
@@ -61,4 +56,4 @@ script = ExtResource("1_w8kca")
 bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.3254902)
 line_color = Color(0.654902, 0.654902, 0.654902, 0.4509804)
 highlight_color = Color(0.11372549, 0.11372549, 0.11372549, 0.4509804)
-options = Array[ExtResource("2_5eg7p")]([SubResource("AtlasTexture_l5p0e"), SubResource("AtlasTexture_hux7u"), SubResource("AtlasTexture_nwf0m"), SubResource("AtlasTexture_5eg7p"), SubResource("AtlasTexture_a61fs"), SubResource("AtlasTexture_7abba")])
+options = Array[ExtResource("2_5eg7p")]([SubResource("AtlasTexture_l5p0e"), SubResource("AtlasTexture_hux7u"), SubResource("AtlasTexture_ull34"), SubResource("AtlasTexture_5eg7p"), SubResource("AtlasTexture_a61fs"), SubResource("AtlasTexture_7abba")])

@@ -3,51 +3,48 @@
 [ext_resource type="Script" uid="uid://c0gftc2px55t5" path="res://Scripts/ui.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://byk0nbaiqbc55" path="res://Scenes/selection_wheel.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://4mf04m051r6i" path="res://Scripts/wheel_options.gd" id="3_8gbba"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8gbba"]
+[ext_resource type="Texture2D" uid="uid://cyccbfr1h8rh1" path="res://Assets/Selection Wheel/Lock.png" id="4_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://crjtco1kdjk7" path="res://Assets/Selection Wheel/Normal.png" id="4_kry3j"]
+[ext_resource type="Texture2D" uid="uid://c636q5jyujsul" path="res://Assets/Selection Wheel/Crow.png" id="5_21xkr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8gbba"]
-atlas = SubResource("PlaceholderTexture2D_8gbba")
+atlas = ExtResource("4_kry3j")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("3_8gbba")
 name = "none"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jjvhh"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjvhh"]
-atlas = SubResource("PlaceholderTexture2D_jjvhh")
+atlas = ExtResource("5_21xkr")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("3_8gbba")
 name = "Transform 1"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kry3j"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_kry3j"]
-atlas = SubResource("PlaceholderTexture2D_kry3j")
+atlas = ExtResource("4_jjvhh")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("3_8gbba")
 name = "Transform 2"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_21xkr"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_21xkr"]
-atlas = SubResource("PlaceholderTexture2D_21xkr")
+atlas = ExtResource("4_jjvhh")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("3_8gbba")
 name = "Transform 3"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6bp64"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bp64"]
-atlas = SubResource("PlaceholderTexture2D_6bp64")
+atlas = ExtResource("4_jjvhh")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("3_8gbba")
 name = "Transform 4"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_344ge"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynf5e"]
-atlas = SubResource("PlaceholderTexture2D_344ge")
+atlas = ExtResource("4_jjvhh")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("3_8gbba")
 name = "Transform 5"
 metadata/_custom_type_script = "uid://4mf04m051r6i"

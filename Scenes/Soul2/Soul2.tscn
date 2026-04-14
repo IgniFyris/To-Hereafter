@@ -3,18 +3,31 @@
 [ext_resource type="Script" uid="uid://2risb3kak1sq" path="res://Scripts/Level Generation/level_generation.gd" id="1_do24g"]
 [ext_resource type="PackedScene" uid="uid://cqvwtvcccj3lg" path="res://Scenes/Player.tscn" id="2_q801t"]
 [ext_resource type="PackedScene" uid="uid://edgm8i7psjbq" path="res://Scenes/LevelGeneration/SanityBar.tscn" id="3_jaoin"]
-[ext_resource type="Texture2D" uid="uid://lbqtmhcbmexf" path="res://Assets/Tilesets/Tileset.png" id="4_qfbcg"]
+[ext_resource type="Texture2D" uid="uid://16f4ebbbjpuv" path="res://Assets/Tilesets/Untitled100_20260414170653.png" id="4_do24g"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11o54"]
-texture = ExtResource("4_qfbcg")
-7:5/0 = 0
-7:6/0 = 0
-7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.9575672, 8, -1.3057747, 8, 8, -8, 8)
-9:6/0 = 0
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_do24g"]
+texture = ExtResource("4_do24g")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_cxncl"]
+[sub_resource type="TileSet" id="TileSet_q801t"]
 physics_layer_0/collision_layer = 9
-sources/0 = SubResource("TileSetAtlasSource_11o54")
+sources/0 = SubResource("TileSetAtlasSource_do24g")
 
 [node name="LevelGeneration" type="Node2D" unique_id=1535418331 node_paths=PackedStringArray("tilemap", "player", "Canvaslayer")]
 process_mode = 1
@@ -41,7 +54,7 @@ dash_speed = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1481562400]
 process_mode = 1
-zoom = Vector2(1.77, 1.77)
+zoom = Vector2(2.28, 2.28)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=318580028]
 
@@ -53,11 +66,6 @@ offset_right = -367.0
 offset_bottom = 746.0
 rotation = -1.5707964
 scale = Vector2(0.76, 0.76)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=873617264]
-process_mode = 1
-z_index = -10
-tile_set = SubResource("TileSet_cxncl")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1708752651]
 process_mode = 1
@@ -74,6 +82,10 @@ z_index = -100
 [node name="MonsterSpawn" type="Timer" parent="." unique_id=1758658388]
 wait_time = 4.0
 autostart = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1371884928]
+z_index = -50
+tile_set = SubResource("TileSet_q801t")
 
 [connection signal="value_changed" from="Player/CanvasLayer/SanityBar" to="." method="_on_sanity_bar_value_changed"]
 [connection signal="timeout" from="MonsterSpawn" to="." method="_on_monster_spawn_timeout"]

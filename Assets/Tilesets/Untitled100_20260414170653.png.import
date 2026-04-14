@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnj0ivdoc7tcu"
-path="res://.godot/imported/Loading_Bar_3_2.png-ecdb0a8a0f84f3bae276c6924d0ceee8.ctex"
+uid="uid://16f4ebbbjpuv"
+path="res://.godot/imported/Untitled100_20260414170653.png-c45222842e2e46290a45341f36bf7258.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Level Essentials/Sanity Bar/Loading_Bar_3_2.png"
-dest_files=["res://.godot/imported/Loading_Bar_3_2.png-ecdb0a8a0f84f3bae276c6924d0ceee8.ctex"]
+source_file="res://Assets/Tilesets/Untitled100_20260414170653.png"
+dest_files=["res://.godot/imported/Untitled100_20260414170653.png-c45222842e2e46290a45341f36bf7258.ctex"]
 
 [params]
 

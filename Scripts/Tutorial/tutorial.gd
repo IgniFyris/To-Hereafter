@@ -1,5 +1,7 @@
 extends Node2D
 
+var TutP2 = "uid://c42r8lliorwtv"
+
 var balloon = load("uid://b4vdtsl8wg12c")
 var dialogue = load("uid://b05mgkw3ad0yw")
 
@@ -69,4 +71,4 @@ func _on_jump_body_entered(body: Node2D) -> void:
 func _on_tut_end_body_entered(body: Node2D) -> void:
 	if body is Player:
 		TutEnd.set_deferred("monitoring", false)
-		SceneLoader.load_scene("uid://bjhbxh7kbf02h", 1)
+		SceneLoader.load_scene(TutP2, 1)

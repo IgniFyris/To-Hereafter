@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://djcku17220ge2"]
+
+[ext_resource type="Texture2D" uid="uid://ldbuk4h6ifk5" path="res://Assets/Personality Test/Terminus.png" id="1_4j4hh"]
+[ext_resource type="Script" uid="uid://d15wndi1hf4vc" path="res://Scripts/Tutorial/tut_end.gd" id="1_uvn3q"]
+
+[node name="TutEnd" type="Node2D" unique_id=495166061]
+script = ExtResource("1_uvn3q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=744059576]
+offset_left = -57.0
+offset_top = -45.0
+offset_right = 1396.0
+offset_bottom = 779.0
+color = Color(0, 0, 0, 1)
+
+[node name="Terminus" type="Sprite2D" parent="." unique_id=20519846]
+position = Vector2(7.6667175, 0.5000038)
+scale = Vector2(1.0097225, 1.0097224)
+texture = ExtResource("1_4j4hh")
+centered = false

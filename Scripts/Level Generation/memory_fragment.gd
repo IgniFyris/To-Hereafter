@@ -7,6 +7,7 @@ var soul2_mem: PackedScene = preload("uid://br02tyeel23dp")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		self.monitoring == false
 		GlobalVars.memoryAmt += 1
 		if GlobalVars.current_scene == "Soul2":
 			if GlobalVars.memoryAmt == 1:
@@ -32,5 +33,5 @@ func _on_body_entered(body: Node2D) -> void:
 					var soul2Mem = soul2_mem.instantiate()
 					get_parent().Canvaslayer.call_deferred("add_child", soul2Mem)
 					get_parent().SanityBar.visible = false
-		get_tree().paused = true
+			get_tree().paused = true
 		call_deferred("queue_free")

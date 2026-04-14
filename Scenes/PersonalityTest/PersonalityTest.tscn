@@ -29,11 +29,11 @@ offset_top = -451.0
 offset_right = 753.0
 offset_bottom = 400.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="Terminus" type="Sprite2D" parent="." unique_id=2085223683]
-visible = false
-position = Vector2(60, 204)
-scale = Vector2(0.76662904, 0.766629)
+position = Vector2(7.6667175, 0.5000038)
+scale = Vector2(1.0097225, 1.0097224)
 texture = ExtResource("1_kx1fu")
 
 [node name="OptionsContainer" type="VBoxContainer" parent="." unique_id=771200413]
