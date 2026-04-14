@@ -43,6 +43,7 @@ func cutscene_watch():
 	DialogueManager.show_dialogue_balloon_scene(ball_resource, resource, "start")
 		
 func mem_finished():
+	get_parent().SanityBar.visible = true
 	get_tree().paused = false
 	get_parent().get_parent().get_parent().playerCam.enabled = true
 	queue_free()
