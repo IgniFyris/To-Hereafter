@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkufi4f0juup0"
-path="res://.godot/imported/Table.png-84452ceb868e1bf9171719252f1227a1.ctex"
+uid="uid://crjtco1kdjk7"
+path="res://.godot/imported/Normal.png-eb3166ec9e45eaf55970c989da6344ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Level Essentials/Sanity Bar/Table.png"
-dest_files=["res://.godot/imported/Table.png-84452ceb868e1bf9171719252f1227a1.ctex"]
+source_file="res://Assets/Selection Wheel/Normal.png"
+dest_files=["res://.godot/imported/Normal.png-eb3166ec9e45eaf55970c989da6344ae.ctex"]
 
 [params]
 

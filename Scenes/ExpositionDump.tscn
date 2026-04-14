@@ -23,7 +23,6 @@ offset_bottom = 804.0
 color = Color(0, 0, 0, 1)
 
 [node name="ExpoDump1" type="TextureButton" parent="." unique_id=1768966701]
-modulate = Color(0.69405985, 0.13687369, 0.5179865, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,7 +41,6 @@ texture_hover = ExtResource("3_lli37")
 script = ExtResource("3_t7oer")
 
 [node name="ExpoDump2" type="TextureButton" parent="." unique_id=1425224364]
-modulate = Color(0.69405985, 0.13687369, 0.5179865, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -61,7 +59,6 @@ texture_hover = ExtResource("6_0rq0a")
 script = ExtResource("3_t7oer")
 
 [node name="ExpoDump3" type="TextureButton" parent="." unique_id=1321928294]
-modulate = Color(0.69405985, 0.13687369, 0.5179865, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -80,7 +77,6 @@ texture_hover = ExtResource("8_emedc")
 script = ExtResource("3_t7oer")
 
 [node name="ExpoDump4" type="TextureButton" parent="." unique_id=850965113]
-modulate = Color(0.69405985, 0.13687369, 0.5179865, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8rgaxythr2ed" path="res://Scripts/Dialogue/dialogue_balloon.gd" id="1_n7bmq"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_3a5ct"]
-[ext_resource type="Texture2D" uid="uid://0y4jv3y38by0" path="res://Assets/Dialogue/DialogueBox.png" id="2_gdl48"]
+[ext_resource type="Texture2D" uid="uid://0y4jv3y38by0" path="res://Assets/Dialogue/TerminusDialogueBox.png" id="2_gdl48"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_gdl48"]
 [ext_resource type="FontFile" uid="uid://djh4isl1mr8el" path="res://Assets/Fonts/TerminusFont/Almendra-Regular.ttf" id="4_xeesf"]
 [ext_resource type="FontFile" uid="uid://d0l5wvjb85ss6" path="res://Assets/Fonts/TerminusFont/Almendra-Bold.ttf" id="5_d621c"]
@@ -140,10 +140,10 @@ texture = ExtResource("2_gdl48")
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1030936092]
 process_mode = 3
 layout_mode = 0
-offset_left = 39.0
-offset_top = 37.0
-offset_right = 1181.0
-offset_bottom = 162.0
+offset_left = 89.0
+offset_top = 572.0
+offset_right = 1166.0
+offset_bottom = 688.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1428277592]
 process_mode = 3
@@ -180,10 +180,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -478.99997
-offset_top = -16.0
-offset_right = -27.620483
-offset_bottom = 12.0
+offset_left = -1016.0
+offset_top = -106.035
+offset_right = -564.6205
+offset_bottom = -78.035
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_vertical = 8
@@ -196,7 +196,6 @@ bbcode_enabled = true
 text = "Character"
 fit_content = true
 scroll_active = false
-horizontal_alignment = 2
 
 [node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=821575988]
 unique_name_in_owner = true

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://clhndl6lyljpc"]
+
+[ext_resource type="Script" uid="uid://d1ljinv8aw4g5" path="res://Scripts/Soul2/soul_2_death.gd" id="1_vvkyp"]
+
+[node name="Node2D" type="Node2D" unique_id=935093567]
+script = ExtResource("1_vvkyp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1037576497]
+offset_left = -235.0
+offset_top = -213.0
+offset_right = 1481.0
+offset_bottom = 823.0

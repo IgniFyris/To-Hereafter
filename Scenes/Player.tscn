@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://u5deonmghh0y" path="res://Assets/Player/FlowerForm/2025-11-12_15.17.54.png" id="7_o3h8g"]
 [ext_resource type="Texture2D" uid="uid://oirsl54f1m1f" path="res://Assets/Player/HourglassForm/hourglassplaceholder.png" id="8_1e7my"]
 [ext_resource type="Script" uid="uid://4mf04m051r6i" path="res://Scripts/wheel_options.gd" id="12_glx4g"]
+[ext_resource type="Texture2D" uid="uid://crjtco1kdjk7" path="res://Assets/Selection Wheel/Normal.png" id="13_1e7my"]
+[ext_resource type="Texture2D" uid="uid://cyccbfr1h8rh1" path="res://Assets/Selection Wheel/Lock.png" id="13_miouo"]
+[ext_resource type="Texture2D" uid="uid://c636q5jyujsul" path="res://Assets/Selection Wheel/Crow.png" id="14_arntx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("3_gntrk")
@@ -118,53 +121,43 @@ animations = [{
 radius = 22.0
 height = 68.0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5eg7p"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5p0e"]
-atlas = SubResource("PlaceholderTexture2D_5eg7p")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("13_1e7my")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("12_glx4g")
 name = "None"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lvtcq"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eg7p"]
-atlas = SubResource("PlaceholderTexture2D_lvtcq")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("14_arntx")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("12_glx4g")
 name = "this is in 1"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a61fs"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hux7u"]
-atlas = SubResource("PlaceholderTexture2D_a61fs")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_miouo"]
+atlas = ExtResource("13_miouo")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("12_glx4g")
-name = "this is in 2"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="ImageTexture" id="ImageTexture_hux7u"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ull34"]
-atlas = SubResource("ImageTexture_hux7u")
+atlas = ExtResource("13_miouo")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("12_glx4g")
 name = "3"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="ImageTexture" id="ImageTexture_nwf0m"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvtcq"]
-atlas = SubResource("ImageTexture_nwf0m")
+atlas = ExtResource("13_miouo")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("12_glx4g")
 name = "4"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
 
-[sub_resource type="ImageTexture" id="ImageTexture_7abba"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjhlh"]
-atlas = SubResource("ImageTexture_7abba")
+atlas = ExtResource("13_miouo")
+region = Rect2(0, 0, 128, 128)
 script = ExtResource("12_glx4g")
 name = "5"
 metadata/_custom_type_script = "uid://4mf04m051r6i"
@@ -246,7 +239,7 @@ grow_vertical = 1
 bg_color = Color(0.09803922, 0.09803922, 0.09803922, 0.3764706)
 line_color = Color(0.654902, 0.654902, 0.654902, 0.3529412)
 highlight_color = Color(0.23137255, 0.23137255, 0.23137255, 0.6156863)
-options = Array[ExtResource("12_glx4g")]([SubResource("AtlasTexture_l5p0e"), SubResource("AtlasTexture_5eg7p"), SubResource("AtlasTexture_hux7u"), SubResource("AtlasTexture_ull34"), SubResource("AtlasTexture_lvtcq"), SubResource("AtlasTexture_xjhlh")])
+options = Array[ExtResource("12_glx4g")]([SubResource("AtlasTexture_l5p0e"), SubResource("AtlasTexture_5eg7p"), SubResource("AtlasTexture_miouo"), SubResource("AtlasTexture_ull34"), SubResource("AtlasTexture_lvtcq"), SubResource("AtlasTexture_xjhlh")])
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
