@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://br02tyeel23dp"]
 
 [ext_resource type="Script" uid="uid://bwwmfrb23wvs2" path="res://Scripts/Soul2/soul_2_mems.gd" id="1_5m8qi"]
+[ext_resource type="Texture2D" uid="uid://digqolf8gf210" path="res://Assets/Soul 2/Untitled103_20260415112622.png" id="2_ndoyy"]
+[ext_resource type="Texture2D" uid="uid://b2vci64mqfulu" path="res://Assets/Soul 2/Untitled103_20260415122130.png" id="3_xh6lm"]
+[ext_resource type="Texture2D" uid="uid://fvuh2w4py84f" path="res://Assets/Soul 2/Untitled103_20260415125112.png" id="4_bgddn"]
+[ext_resource type="Texture2D" uid="uid://64p6c51rxvr" path="res://Assets/Soul 2/Untitled103_20260415130938.png" id="5_7af04"]
+[ext_resource type="Texture2D" uid="uid://bb3y3xnw2x6s4" path="res://Assets/Soul 2/Untitled103_20260415164815.png" id="6_8cmno"]
+[ext_resource type="Texture2D" uid="uid://bjip7t1gj1wxj" path="res://Assets/Soul 2/Untitled103_20260415171148.png" id="7_lffp4"]
+[ext_resource type="Texture2D" uid="uid://cjs2a614ejkgg" path="res://Assets/Soul 2/Untitled103_20260415172849.png" id="8_g0on2"]
+[ext_resource type="Texture2D" uid="uid://bv6ab7drdaxqs" path="res://Assets/Soul 2/Untitled103_20260415174425.png" id="9_axgnf"]
+[ext_resource type="Texture2D" uid="uid://c48ew0fi7pst0" path="res://Assets/Soul 2/Untitled103_20260415182600.png" id="10_425k4"]
 
 [node name="Soul2Mems" type="Node2D" unique_id=1815688032]
 process_mode = 3
@@ -9,6 +18,7 @@ script = ExtResource("1_5m8qi")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1175547970]
 process_mode = 3
 modulate = Color(1, 1, 1, 0)
+z_index = 4
 offset_left = -28.0
 offset_top = -26.0
 offset_right = 1296.0
@@ -19,18 +29,65 @@ metadata/_edit_use_anchors_ = true
 
 [node name="P1" type="Sprite2D" parent="Mem1" unique_id=836750237]
 process_mode = 3
+visible = false
+texture = ExtResource("2_ndoyy")
+centered = false
+
+[node name="P2" type="Sprite2D" parent="Mem1" unique_id=1847398816]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+texture = ExtResource("3_xh6lm")
+centered = false
+
+[node name="P3" type="Sprite2D" parent="Mem1" unique_id=1504714875]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+texture = ExtResource("4_bgddn")
+centered = false
 
 [node name="Mem2" type="Node2D" parent="." unique_id=812614176]
 
 [node name="P1" type="Sprite2D" parent="Mem2" unique_id=100830957]
 process_mode = 3
+visible = false
+texture = ExtResource("5_7af04")
+centered = false
+
+[node name="P2" type="Sprite2D" parent="Mem2" unique_id=162133503]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+texture = ExtResource("6_8cmno")
+centered = false
 
 [node name="Mem3" type="Node2D" parent="." unique_id=871277198]
 
 [node name="P1" type="Sprite2D" parent="Mem3" unique_id=1435486540]
 process_mode = 3
+visible = false
+texture = ExtResource("7_lffp4")
+centered = false
+
+[node name="P2" type="Sprite2D" parent="Mem3" unique_id=1053753876]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+texture = ExtResource("8_g0on2")
+centered = false
+
+[node name="P3" type="Sprite2D" parent="Mem3" unique_id=2094713942]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+texture = ExtResource("9_axgnf")
+centered = false
 
 [node name="Mem4" type="Node2D" parent="." unique_id=1457679178]
 
 [node name="P1" type="Sprite2D" parent="Mem4" unique_id=1538104916]
 process_mode = 3
+visible = false
+texture = ExtResource("10_425k4")
+centered = false

@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://clhndl6lyljpc"]
 
 [ext_resource type="Script" uid="uid://d1ljinv8aw4g5" path="res://Scripts/Soul2/soul_2_death.gd" id="1_vvkyp"]
+[ext_resource type="Texture2D" uid="uid://bq4ye7l1an8um" path="res://Assets/Soul 2/Untitled103_20260415192649.png" id="2_m3hlq"]
+[ext_resource type="Texture2D" uid="uid://cxfuqgq7rjrwl" path="res://Assets/Soul 2/Untitled104_20260415193045.png" id="3_3yxh1"]
 
 [node name="Node2D" type="Node2D" unique_id=935093567]
 script = ExtResource("1_vvkyp")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1037576497]
+z_index = 2
 offset_left = -235.0
 offset_top = -213.0
 offset_right = 1481.0
 offset_bottom = 823.0
+
+[node name="Andr_Max" type="Sprite2D" parent="." unique_id=495399269]
+texture = ExtResource("2_m3hlq")
+centered = false
+
+[node name="Death" type="Sprite2D" parent="." unique_id=2098316967]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+texture = ExtResource("3_3yxh1")
+centered = false

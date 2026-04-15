@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vln3mcigi8i3"
-path="res://.godot/imported/BasicMonster.png-3d3e927206cc6b4128ebe857cf7de856.ctex"
+uid="uid://cxfuqgq7rjrwl"
+path="res://.godot/imported/Untitled104_20260415193045.png-14f46027bb5c9c04e40befdeece95f48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Level Essentials/Monsters/BasicMonster.png"
-dest_files=["res://.godot/imported/BasicMonster.png-3d3e927206cc6b4128ebe857cf7de856.ctex"]
+source_file="res://Assets/Soul 2/Untitled104_20260415193045.png"
+dest_files=["res://.godot/imported/Untitled104_20260415193045.png-14f46027bb5c9c04e40befdeece95f48.ctex"]
 
 [params]
 

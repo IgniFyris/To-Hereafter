@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://ctn0lntaoowe7"]
 
+[ext_resource type="Script" uid="uid://dtha4htxrg24y" path="res://Scripts/demo_end.gd" id="1_i8xnn"]
+[ext_resource type="Texture2D" uid="uid://b2vd6efyh6xug" path="res://Assets/DemoEnd.png" id="2_qvmyb"]
+
 [node name="DemoEnd" type="Node2D" unique_id=239532108]
+script = ExtResource("1_i8xnn")
+
+[node name="DemoEnd" type="Sprite2D" parent="." unique_id=1088384741]
+position = Vector2(644, 360)
+texture = ExtResource("2_qvmyb")

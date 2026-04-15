@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcya7nhdhi0ar"
-path="res://.godot/imported/588220026_857426343444374_6121070237596788635_n.jpg-df4788e902d41120d2a17002d6fd8c5e.ctex"
+uid="uid://64p6c51rxvr"
+path="res://.godot/imported/Untitled103_20260415130938.png-38317a1bf46654279ca3afa6304b61fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/NormalForm/588220026_857426343444374_6121070237596788635_n.jpg"
-dest_files=["res://.godot/imported/588220026_857426343444374_6121070237596788635_n.jpg-df4788e902d41120d2a17002d6fd8c5e.ctex"]
+source_file="res://Assets/Soul 2/Untitled103_20260415130938.png"
+dest_files=["res://.godot/imported/Untitled103_20260415130938.png-38317a1bf46654279ca3afa6304b61fb.ctex"]
 
 [params]
 

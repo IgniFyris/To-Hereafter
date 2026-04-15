@@ -8,3 +8,4 @@ func _ready() -> void:
 	DialogueManager.show_dialogue_balloon_scene(balloon, dialogue, "endoftut")
 	await DialogueManager.dialogue_ended
 	SceneLoader.load_scene("uid://byvjo0npg47ct", 3)
+	create_tween().tween_property(Music.ExpoDumpMusic, "volume_db", -90.0, 3)

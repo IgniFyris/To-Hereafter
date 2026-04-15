@@ -112,6 +112,7 @@ func add_walls():
 								levelGrid[ny][nx] = TileType.WALL
 				
 func create_level():
+	Music.ExpoDumpMusic.stop()
 	var amt = 0
 	var memAmt = 0
 	
@@ -127,6 +128,9 @@ func create_level():
 			break
 			
 	await get_tree().create_timer(3.0).timeout
+	
+	Music.soul_2.play()
+	create_tween().tween_property(Music.soul_2, "volume_db", 0, 1)
 	
 	while amt < 12:
 		create_monsters()
