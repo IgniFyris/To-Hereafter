@@ -38,8 +38,10 @@ var spawned_monster_tiles : Array[Vector2i] = []
 
 var UIDString
 var memoryRooms = []
+var camZoom
 
 func _ready():
+	camZoom = playerCam.zoom
 	GlobalVars.current_scene = "Soul2"
 	GlobalVars.memoryAmt = 0
 	spawned_monster_tiles.clear()
@@ -225,10 +227,10 @@ func is_in_any_position_in_any_room(world_pos: Vector2) -> bool:
 	return false
 
 func _on_player_entered():
-	create_tween().set_ignore_time_scale(true).tween_property(playerCam, "zoom", Vector2(2.78, 2.78), 1).set_ease(Tween.EASE_IN_OUT)
+	create_tween().set_ignore_time_scale(true).tween_property(playerCam, "zoom", playerCam.zoom + Vector2(.75, .75), 0.5).set_ease(Tween.EASE_IN_OUT)
 	
 func _on_player_exited():
-	create_tween().set_ignore_time_scale(true).tween_property(playerCam, "zoom", Vector2(2.28, 2.28), 1).set_ease(Tween.EASE_IN_OUT)
+	create_tween().set_ignore_time_scale(true).tween_property(playerCam, "zoom", camZoom, 0.5).set_ease(Tween.EASE_IN_OUT)
 
 func _on_sanity_bar_value_changed(value: float) -> void:
 	if value < 0 or value == 0:

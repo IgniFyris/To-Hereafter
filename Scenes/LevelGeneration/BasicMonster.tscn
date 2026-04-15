@@ -1,11 +1,48 @@
 [gd_scene format=3 uid="uid://dofox6h2j5foi"]
 
 [ext_resource type="Script" uid="uid://uv4kmgfadu1d" path="res://Scripts/Level Generation/basic_monster.gd" id="1_5js1u"]
-[ext_resource type="Texture2D" uid="uid://vln3mcigi8i3" path="res://Assets/Level Essentials/Monsters/BasicMonster.png" id="1_g4pt1"]
+[ext_resource type="Texture2D" uid="uid://d4b2f25hax8lq" path="res://Assets/Level Essentials/Monsters/BasicMonster/Attack/Untitled63_20260415175706.png" id="2_ya77u"]
+[ext_resource type="Texture2D" uid="uid://xn7hdn1fr5yd" path="res://Assets/Level Essentials/Monsters/BasicMonster/Idle/Untitled63_20260415175654.png" id="3_2vr7w"]
+[ext_resource type="Texture2D" uid="uid://clvywegtpnwa3" path="res://Assets/Level Essentials/Monsters/BasicMonster/Idle/Untitled63_20260415175658.png" id="4_5hfg0"]
+[ext_resource type="Texture2D" uid="uid://bonim3db2jlb6" path="res://Assets/Level Essentials/Monsters/BasicMonster/Walk/Untitled63_20260415175719.png" id="5_anvrf"]
+[ext_resource type="Texture2D" uid="uid://b3sykeipjiu7j" path="res://Assets/Level Essentials/Monsters/BasicMonster/Walk/Untitled63_20260415175724.png" id="6_3hylc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5js1u"]
 radius = 9.0
 height = 40.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i15ek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ya77u")
+}],
+"loop": false,
+"name": &"Attacked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2vr7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5hfg0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_anvrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3hylc")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5js1u"]
 size = Vector2(46, 55)
@@ -25,10 +62,12 @@ speed = 100.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=95598111]
 shape = SubResource("CapsuleShape2D_5js1u")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320446185]
-z_index = -1
-scale = Vector2(0.08759123, 0.087591305)
-texture = ExtResource("1_g4pt1")
+[node name="MonsAnims" type="AnimatedSprite2D" parent="." unique_id=2125631118]
+position = Vector2(2.0000002, -3.0000005)
+scale = Vector2(0.09, 0.09)
+sprite_frames = SubResource("SpriteFrames_i15ek")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="Killzone" type="Area2D" parent="." unique_id=1252238070]
 collision_layer = 3
