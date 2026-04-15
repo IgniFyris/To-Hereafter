@@ -6,10 +6,13 @@
 [speed=0.5]He couldn’t help but scoff, amused by his own misery. 
 => END
 
-~ Mem1
+~ Mem1_A
 [color=#1F7A8C]Andrew[/color]: [speed=0.5][i]What did I do to deserve this?[/i]
 [speed=0.5]He thought, kicking up a pile of snow as he walked.
 [speed=0.5]Occupied by his thoughts, he failed to notice his surroundings until a loud crash reverberated through the narrow alleyway.
+=> END
+
+~ Mem1_B
 [speed=0.5]He turned his head to the source of the sound to see a mangy, old dog scavenging through a knocked over trash bin.
 [speed=0.5]It was nose deep into the spilled contents of the bin, sniffing out anything it could eat. 
 
@@ -21,6 +24,9 @@
 [speed=0.5]He snapped, his words sharp and low as he stared down at the dog. Its body tensed up. It does not move.
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“Why, you little—” 
 [speed=0.5]He snapped again, this time louder.
+=> END
+
+~ Mem1_C
 [speed=0.5]The next words died in his mouth when the dog raised its head to meet his gaze.
 [speed=0.5]Its ears were flattened against its head. It whimpered, its tail between its legs as it cowered. Its frail body shivering like a leaf fluttering in the wind.
 
@@ -34,7 +40,7 @@
 [speed=0.5]Perhaps he had more in common with this dog than he thought. 
 => END
 
-~ Mem2
+~ Mem2_A
 [speed=0.5]The cold sank deep in slow and merciless, seeping through the sleeves of Andrew’s jacket and numbing his fingers as he fed another piece of scrap into the barrel fire.
 [speed=0.5]The flames flickered weakly, bending with each draft that slipped through the broken windows. 
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“God damn it,”
@@ -47,6 +53,9 @@
 [speed=0.5]Him and the dog sat closer to the fire, the warmth it brought easing the cold winter air ever so slightly.
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“Don’t get used to it.”
 [speed=0.5]He lowered himself to the ground, his eyes drifting back to it. Up close, he could see every rib pressing against its skin. It didn’t even flinch—just watched him, wary, waiting.
+=> END
+
+~ Mem2_B
 [speed=0.5]He clicked his tongue under his breath and dug through his satchel. After a moment, his fingers closed around a small packet of crackers, the last one he’d meant to save.
 [speed=0.5]He tore it open, snapping a piece in half before holding one out.
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“Here,”
@@ -56,12 +65,12 @@
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“Ah! Damn it!”
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“Alright, alright—”
 [speed=0.5]The dog’s tail thumped wildly against his side. He froze for a second… then let out a quiet breath.
-[color=#1F7A8C]Andrew[/color]: [speed=0.5]“God damn it, Max..”
+[color=#1F7A8C]Andrew[/color]: [speed=0.5]“God damn it, [color=#68B0AB]Max..[/color]”
 [speed=0.5]he muttered, almost without thinking.
 [speed=0.5]The corners of his mouth twitched upward.
 => END
 
-~ Mem3
+~ Mem3_A
 [speed=0.5]Andrew woke to the murmur of voices just outside the abandoned building he called home.
 [speed=0.5]He rose slowly and crept toward the window, careful to place each step between the groans of the floorboards.
 [color=#F0BCD4][shake] [speed=0.5] “I’m telling you, officer, I heard something moving in there,”[/shake][/color]
@@ -73,9 +82,15 @@
 [speed=0.5]Outside, the floor’s faint creaks hadn’t gone unnoticed. One officer glanced at the other and nodded. They moved toward the entrance.
 [speed=0.5]Andrew scooped the dog into his arms and scanned the room. No doors. No time. Then he saw it—the fire escape. He rushed to the window, pushing it open just enough to slip the dog through before climbing out after him.
 [speed=0.5]Upstairs, the officers reached the hallway and caught sight of movement. One stepped forward—just in time to see Andrew and the dog on the fire escape. Andrew froze, eyes wide. The officers lunged. He slammed the window shut.
+=> END
+
+~ Mem3_B
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“Go!”
 [speed=0.5]he shouted, scrambling down the metal stairs.The fire escape rattled under their weight as he descended, the officers close behind. At the bottom, Andrew clutched the dog tightly and dropped onto the alley pavement. The ladder above shrieked—and then snapped loose. The officers jumped down after him. Andrew ran.
 [speed=0.5]He darted through narrow alleys, cutting corners, not daring to look back until the sounds of pursuit finally faded. Only then did he stop.
+=> END
+
+~ Mem3_C
 [speed=0.5]He leaned against the wall, breath ragged—and suddenly laughed. 
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“Oh… God,”
 [speed=0.5]The dog pressed against his leg.
@@ -84,7 +99,7 @@
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“What a way to start the day, huh?”
 => END
 
-~ Mem4
+~ Mem4_A
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“Max!”
 [speed=0.5]He called, chasing after his dog along the snow-covered concrete sidewalk. 
 [color=#1F7A8C]Andrew[/color]: [speed=0.5]“Slow down, boy!”
@@ -130,7 +145,9 @@
 [speed=0.5]His gaze softened as his eyes drifted shut, a quiet, almost peaceful expression settling across his face. 
 [color=#1F7A8C]Andrew[/color]: [speed=0.2][shake]“Don’t you go anywhere,”[/shake]
 [speed=0.5]He whispered.
+=> END
 
+~ Death2
 [speed=0.3]The next morning, Max stirred.
 [speed=0.3]A thin layer of snow dusted Andrew’s hair and clung to his lashes. He laid exactly where he did the night before—too still.
 

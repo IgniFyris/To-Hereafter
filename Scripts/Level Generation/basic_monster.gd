@@ -6,9 +6,9 @@ signal player_outside
 
 var arrowsContainer: PackedScene = preload("uid://hedujnigma4w")
 @export var arrowConYPos : float
-@onready var Sprite = $Sprite2D
 @onready var MonsChecker = $MonsChecker
 @onready var KillZone = $Killzone
+@onready var mons_anims: AnimatedSprite2D = $MonsAnims
 
 var arrowPicRes = load("uid://cokccv0240pwm")
 var arrowPicResH = load("uid://drk7gt8ct3hpf")
@@ -28,6 +28,7 @@ const GRAVITY : float = 300.0
 var direction : float = 1.0
 
 var collided
+var playerIn = false
 
 func _ready() -> void:
 	
@@ -45,7 +46,15 @@ func movement(delta : float):
 	velocity.x = speed * direction
 	
 func update_animation():
-	Sprite.flip_h = false if direction == 1.0 else true
+	if direction != 0:
+		mons_anims.flip_h = direction > 0
+		
+	elif direction != 0:
+		mons_anims.play("Walk")
+	elif playerIn == true:
+		mons_anims.play("Attacked")
+	else:
+		mons_anims.play("Idle")
 
 func update_direction():
 	if not WallDetectionRay.is_colliding() and LedgeDetectionRay.is_colliding() and not WallDetectionRay2.is_colliding():
@@ -103,7 +112,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("enter")
+		playerIn = true
 		player_inside.emit()
 		arrowCon = arrowsContainer.instantiate()
 		add_child(arrowCon)
@@ -127,6 +136,7 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 
 func _on_killzone_body_exited(body: Node2D) -> void:
 	if body is Player:
+		playerIn = false
 		player_outside.emit()
 		Engine.time_scale = 1
 		if arrowCon:

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://hivelh5yjkxs" path="res://Scripts/Audio/main_menu_music.gd" id="2_0lc4o"]
 [ext_resource type="AudioStream" uid="uid://gtg0qjf02g14" path="res://Audio/ExpoDump.mp3" id="3_qqfsm"]
 [ext_resource type="AudioStream" uid="uid://d1rx2bpgmw310" path="res://Audio/Uncomfy3.2.mp3" id="4_0lc4o"]
+[ext_resource type="AudioStream" uid="uid://5k3wuqw8fl0i" path="res://Audio/Andrew1.mp3" id="5_qqfsm"]
 
 [node name="MainMenu Music" type="AudioStreamPlayer" unique_id=1511048505]
 process_mode = 3
@@ -20,6 +21,11 @@ bus = &"Music"
 stream = ExtResource("4_0lc4o")
 bus = &"Music"
 
+[node name="Soul2" type="AudioStreamPlayer" parent="." unique_id=79570184]
+stream = ExtResource("5_qqfsm")
+bus = &"Music"
+
 [connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="finished" from="ExpoDumpMusic" to="." method="_on_expo_dump_music_finished"]
 [connection signal="finished" from="PersonalityTest" to="." method="_on_personality_test_finished"]
+[connection signal="finished" from="Soul2" to="." method="_on_soul_2_finished"]
